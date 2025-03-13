@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover, user-scalable=no">
+    <title>HopeSpark Foundation | Empowering Communities</title>
+    
+    <!-- CDN Links -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+      :root {
+            --primary: #2A4365;
+            --secondary: #D4A017;
+            --accent: #F8F5F0;
+            --primary-light: #3A5375;
+            --secondary-light: #E4B027;
+            --text-light: #F8F5F0;
+            --text-dark: #333333;
+        }
+        
+        body {
+            background-color: var(--accent);
+            color: var(--text-dark);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .bg-primary { background-color: var(--primary); }
+        .bg-secondary { background-color: var(--secondary); }
+        .bg-accent { background-color: var(--accent); }
+        .bg-primary-light { background-color: var(--primary-light); }
+        .bg-secondary-light { background-color: var(--secondary-light); }
+        
+        .text-primary { color: var(--primary); }
+        .text-secondary { color: var(--secondary); }
+        .text-accent { color: var(--accent); }
+        .text-light { color: var(--text-light); }
+        .text-dark { color: var(--text-dark); }
+        
+        .timeline-container {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 768px) {
+            .timeline-container {
+                grid-template-columns: 1fr 4px 1fr;
+            }
+        }
+        
+        .timeline-line {
+            position: relative;
+            background-color: var(--primary);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+        
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-position: center;
+            background-size: cover;
+            transform: translateZ(-1px) scale(2);
+            z-index: -1;
+        }
+        
+        .staggered-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-in-view.visible .staggered-fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .story-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .spark-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 3s ease-in-out forwards;
+        }
+        
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .custom-shape-divider-bottom-1 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .custom-shape-divider-bottom-1 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+            transform: rotateY(180deg);
+        }
+
+        .custom-shape-divider-bottom-1 .shape-fill {
+            fill: var(--primary);
+        }
+        
+        .custom-shape-divider-top-1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .custom-shape-divider-top-1 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+        }
+
+        .custom-shape-divider-top-1 .shape-fill {
+            fill: var(--accent);
+        }
+
+        .brand-font {
+            font-family: 'Pacifico', cursive;
+            letter-spacing: 1.5px;
+        }
+
+        /* Simplified Navbar Styles */
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Fixes */
+        .mobile-menu {
+            top: 80px; /* Match navbar height */
+            z-index: 40;
+        }
+
+        /* Loader Animation Fix */
+        .loader {
+            z-index: 9999;
+        }
+       /* Custom scrollbar */
+       ::-webkit-scrollbar {
+            width: 2px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary);
+        }
+        .chat-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chat-button {
+    background: var(--secondary);
+    color: var(--primary);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.chat-button::after {
+    content: 'Chat with Support';
+    position: absolute;
+    right: calc(100% + 1rem);
+    white-space: nowrap;
+    background: var(--primary);
+    color: var(--accent);
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.chat-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.chat-button:hover::after {
+    opacity: 1;
+}
+.chat-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chat-button {
+    background: var(--secondary);
+    color: var(--primary);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.chat-button::after {
+    content: 'Chat with Support';
+    position: absolute;
+    right: calc(100% + 1rem);
+    white-space: nowrap;
+    background: var(--primary);
+    color: var(--accent);
+    padding: 0.75rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.chat-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.chat-button:hover::after {
+    opacity: 1;
+}
+.footer-container {
+      background-color: var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .footer-wave {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    
+    .footer-wave svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 65px;
+    }
+    
+    .footer-wave .shape-fill {
+      fill: #f5f5f5;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 85px auto 50px;
+      padding: 0 20px;
+    }
+    
+    .footer-logo-section {
+      flex: 1 1 300px;
+      margin-bottom: 30px;
+    }
+    
+    .footer-logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 15px;
+      display: inline-block;
+      position: relative;
+    }
+    
+    .footer-logo::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: var(--secondary);
+    }
+    
+    .footer-tagline {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      line-height: 1.6;
+      max-width: 300px;
+    }
+    
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--text-light);
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      background-color: var(--secondary);
+      transform: translateY(-3px);
+      color: var(--primary);
+    }
+    
+    .footer-links-section {
+      flex: 1 1 180px;
+      margin-bottom: 30px;
+    }
+    
+    .footer-heading {
+      color: var(--accent);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background-color: var(--secondary);
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-link {
+      margin-bottom: 12px;
+    }
+    
+    .footer-link a {
+      color: rgba(248, 245, 240, 0.8);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      padding-left: 15px;
+      font-size: 0.95rem;
+    }
+    
+    .footer-link a:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--secondary);
+      transition: all 0.3s ease;
+    }
+    
+    .footer-link a:hover {
+      color: var(--secondary);
+      padding-left: 20px;
+    }
+    
+    .footer-link a:hover:before {
+      background-color: var(--accent);
+    }
+    
+    .footer-contact-section {
+      flex: 1 1 300px;
+      margin-bottom: 30px;
+    }
+    
+    .contact-info {
+      margin-bottom: 20px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      color: rgba(248, 245, 240, 0.9);
+      font-size: 0.95rem;
+    }
+    
+    .contact-icon {
+      margin-right: 15px;
+      color: var(--secondary);
+      font-size: 1.2rem;
+      margin-top: 3px;
+    }
+    
+    .newsletter-form {
+      margin-top: 25px;
+    }
+    
+    .form-group {
+      display: flex;
+      margin-bottom: 15px;
+      position: relative;
+    }
+    
+    .newsletter-input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: var(--text-light);
+      border-radius: 5px 0 0 5px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .newsletter-input::placeholder {
+      color: rgba(248, 245, 240, 0.5);
+    }
+    
+    .submit-btn {
+      background-color: var(--secondary);
+      color: var(--primary);
+      border: none;
+      padding: 0 20px;
+      cursor: pointer;
+      border-radius: 0 5px 5px 0;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+      background-color: var(--secondary-light);
+    }
+    
+    .newsletter-disclaimer {
+      color: rgba(248, 245, 240, 0.6);
+      font-size: 0.8rem;
+    }
+    
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      padding: 8px 12px;
+      color: var(--text-light);
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .trust-badge:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .trust-badge i {
+      color: var(--secondary);
+      margin-right: 8px;
+      font-size: 1rem;
+    }
+    
+    .footer-bottom {
+      background-color: var(--primary-light);
+      padding: 20px 0;
+      text-align: center;
+    }
+    
+    .footer-bottom-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    
+    .copyright {
+      color: rgba(248, 245, 240, 0.7);
+      font-size: 0.9rem;
+    }
+    
+    .heart-icon {
+      color: var(--secondary);
+      margin: 0 3px;
+    }
+    
+    .footer-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .footer-bottom-link {
+      color: rgba(248, 245, 240, 0.7);
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-bottom-link:hover {
+      color: var(--secondary);
+    }
+    
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 100;
+    }
+    
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      background-color: var(--secondary-light);
+      transform: translateY(-5px);
+    }
+    
+    /* Media Queries for Responsiveness */
+    @media screen and (max-width: 768px) {
+      .footer-content {
+        flex-direction: column;
+        margin-top: 70px;
+      }
+      
+      .footer-logo-section, .footer-links-section, .footer-contact-section {
+        flex: 1 1 100%;
+        margin-bottom: 40px;
+      }
+      
+      .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .footer-bottom-links {
+        margin-top: 15px;
+        justify-content: center;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .footer-bottom-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .trust-badges {
+        justify-content: center;
+      }
+      
+      .back-to-top {
+        width: 35px;
+        height: 35px;
+        bottom: 20px;
+        left: 20px;
+      }
+    }
+    </style>
+</head>
+
+<body x-data="{ 
+  isMenuOpen: false ,
+  activeSection: 'intro',
+  observerActive: false,
+  setupObserver() {
+      if (this.observerActive) return;
+      
+      this.observerActive = true;
+      const sections = document.querySelectorAll('.observe-section');
+      
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  this.activeSection = entry.target.id;
+              }
+          });
+      }, { threshold: 0.5 });
+      
+      sections.forEach(section => {
+          observer.observe(section);
+      });
+      
+      const animateElements = document.querySelectorAll('.animate-in-view');
+      const animationObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('visible');
+                  
+                  const staggeredElements = entry.target.querySelectorAll('.staggered-fade-in');
+                  staggeredElements.forEach((el, index) => {
+                      setTimeout(() => {
+                          el.style.transitionDelay = `${index * 150}ms`;
+                      }, 100);
+                  });
+              }
+          });
+      }, { threshold: 0.1 });
+      
+      animateElements.forEach(element => {
+          animationObserver.observe(element);
+      });
+  },
+  scrollToSection(sectionId) {
+      document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+  }
+}" 
+x-init="setupObserver()"
+class="min-h-screen">
+
+
+
+
+    <!-- Loader -->
+    <div class="loader fixed inset-0 grid place-items-center bg-white transition-opacity duration-300">
+        <div class="loader-text absolute text-center font-cursive text-2xl">HOPESPARK<br>FOUNDATION</div>
+        <div class="w-10 h-10 border-4 border-t-transparent border-black rounded-full animate-spin"></div>
+    </div>
+
+    <!-- Simplified Navbar -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b z-50 h-20">
+        <div class="container mx-auto px-4 h-full">
+            <div class="flex items-center justify-between h-full">
+                <!-- Home Logo -->
+                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <div class="w-10 h-10 bg-[var(--primary)] rounded-lg flex items-center justify-center">
+                        <svg width="700" height="700" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                              <!-- Circular border gradient -->
+                              <radialGradient id="borderGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                                <stop offset="0%" style="stop-color:#ccc; stop-opacity:1"/>
+                                <stop offset="100%" style="stop-color:#666; stop-opacity:1"/>
+                              </radialGradient>
+                              
+                              <!-- Heart gradient for a vibrant red look -->
+                              <linearGradient id="heartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff4d4d;stop-opacity:1"/>
+                                <stop offset="100%" style="stop-color:#b30000;stop-opacity:1"/>
+                              </linearGradient>
+                              
+                              <!-- Drop shadow filter for extra depth (applied to the heart) -->
+                              <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+                                <feOffset dx="4" dy="4" result="offsetBlur"/>
+                                <feMerge>
+                                  <feMergeNode/>
+                                  <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                              </filter>
+                              
+                              <!-- Filter combining a subtle blur, offset and texture (for a realistic hand effect) -->
+                              <filter id="handFilter" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+                                <feOffset in="blur" dx="2" dy="2" result="offsetBlur"/>
+                                <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise"/>
+                                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" result="displaced"/>
+                                <feMerge>
+                                  <feMergeNode in="offsetBlur"/>
+                                  <feMergeNode in="displaced"/>
+                                </feMerge>
+                              </filter>
+                              
+                              <!-- Hand gradient for a natural skin tone -->
+                              <linearGradient id="handGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f5c6a5;stop-opacity:1"/>
+                                <stop offset="100%" style="stop-color:#d2a679;stop-opacity:1"/>
+                              </linearGradient>
+                            </defs>
+                            
+                            <!-- Circular border -->
+                            <circle cx="250" cy="250" r="240" fill="none" stroke="url(#borderGradient)" stroke-width="10"/>
+                            
+                            <!-- Heart shape with a drop shadow -->
+                            <path d="M250 180 
+                                     C200 120, 100 120, 100 220 
+                                     C100 300, 250 380, 250 380 
+                                     C250 380, 400 300, 400 220 
+                                     C400 120, 300 120, 250 180 Z" 
+                                  fill="url(#heartGradient)" 
+                                  filter="url(#dropShadow)"/>
+                            
+                            <!-- Left hand raising the heart -->
+                            <path d="M140,320 
+                                     C130,325, 125,340, 130,355 
+                                     C135,370, 150,375, 160,370 
+                                     C170,365, 175,350, 170,340 
+                                     C165,330, 155,325, 140,320 Z" 
+                                  fill="url(#handGradient)" 
+                                  filter="url(#handFilter)"/>
+                            
+                            <!-- Right hand (mirrored) -->
+                            <path d="M360,320 
+                                     C370,325, 375,340, 370,355 
+                                     C365,370, 350,375, 340,370 
+                                     C330,365, 325,350, 330,340 
+                                     C335,330, 345,325, 360,320 Z" 
+                                  fill="url(#handGradient)" 
+                                  filter="url(#handFilter)"/>
+                          </svg>
+                    </div>
+                    <span class="brand-font text-xl text-[var(--primary)]">HopeSpark Foundation</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-6 text-[var(--primary)] font-bold">
+                    <a href="index.html" class="nav-link"><i class="fas fa-home mr-2"></i>Home</a>
+                    <a href="charity.html" class="nav-link">Charity</a>
+                    <a href="testimonial.html" class="nav-link">Testimonials</a>
+                    <a href="projects.html" class="nav-link">Projects</a>
+                    <a href="employment.html" class="nav-link">Get Employed!</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button @click="isMenuOpen = !isMenuOpen" class="md:hidden text-2xl text-[var(--primary)]">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed w-full bg-white/95 backdrop-blur-lg shadow-xl" 
+         x-show="isMenuOpen"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:leave="transition ease-in duration-200">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col gap-3 text-[var(--primary)]">
+                <a href="index.html" class="nav-link p-2" @click="isMenuOpen = false"><i class="fas fa-home mr-2"></i>Home</a>
+                <a href="charity.html" class="nav-link p-2" @click="isMenuOpen = false">Charity</a>
+                <a href="testimonial.html" class="nav-link p-2" @click="isMenuOpen = false">Testimonials</a>
+                <a href="projects.html" class="nav-link p-2" @click="isMenuOpen = false">Projects</a>
+                <a href="employment.html" class="nav-link p-2" @click="isMenuOpen = false">Get Employed!</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 min-h-screen">
+
+        <!-- Hero Section -->
+    <section id="intro" class="observe-section relative h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
+      <div class="parallax-bg" style="background-image: url('https://i.pinimg.com/736x/bc/8a/c2/bc8ac2e02da2fd27994c1e138e1a55be.jpg');"></div>
+      
+      <div class="container mx-auto px-4 relative z-20">
+          <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+              <h1 class="text-4xl md:text-6xl font-bold text-light mb-6 tracking-tighter">Our Story</h1>
+              <div class="w-24 h-1 bg-secondary mx-auto mb-8"></div>
+              <p class="text-xl md:text-2xl text-light max-w-3xl mx-auto leading-relaxed">
+                  How a collective vision transformed into a global movement for change
+              </p>
+              <div class="mt-12">
+                  <button @click="scrollToSection('beginning')" class="inline-block animate-bounce bg-secondary hover:bg-secondary-light text-white rounded-full p-3 transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                      </svg>
+                  </button>
+              </div>
+          </div>
+      </div>
+      
+      <div class="custom-shape-divider-bottom-1">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+          </svg>
+      </div>
+  </section>
+
+  <!-- The Beginning Section -->
+  <section id="beginning" class="observe-section py-20 md:py-28 bg-white">
+      <div class="container mx-auto px-4">
+          <div class="max-w-6xl mx-auto">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                  <div data-aos="fade-right" data-aos-duration="1000">
+                      <div class="relative rounded-lg overflow-hidden shadow-xl">
+                          <img src="https://i.pinimg.com/736x/10/98/9d/10989d868bc815b0d0525f1d35281471.jpg" alt="The beginning of HopeSpark" class="w-full h-auto object-cover">
+                          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary to-transparent p-4 text-white text-sm">
+                              Our first community meeting, 2015
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="animate-in-view">
+                      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6 staggered-fade-in">The Beginning</h2>
+                      <div class="w-16 h-1 bg-secondary mb-8 staggered-fade-in"></div>
+                      
+                      <p class="text-lg mb-6 leading-relaxed staggered-fade-in">
+                          HopeSpark Foundation began not with a single founder, but with a serendipitous convergence of seven strangers in the aftermath of the devastating coastal floods of 2015.
+                      </p>
+                      
+                      <p class="text-lg mb-6 leading-relaxed staggered-fade-in">
+                          These individuals—a retired teacher, a software engineer, a nurse, a small business owner, a university student, a former Peace Corps volunteer, and a community organizer—found themselves in the same volunteer tent, sorting supplies for survivors.
+                      </p>
+                      
+                      <p class="text-lg leading-relaxed staggered-fade-in">
+                          As night fell and the official relief workers departed, these seven remained, sharing stories over lukewarm coffee and realizing they shared a common frustration: the gap between crisis response and sustainable community rebuilding.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  
+  <!-- The Spark Section -->
+  <section id="spark" class="observe-section py-20 md:py-28 bg-primary text-light relative">
+      <div class="custom-shape-divider-top-1">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+          </svg>
+      </div>
+      
+      <div class="container mx-auto px-4">
+          <div class="max-w-6xl mx-auto">
+              <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+                  <h2 class="text-3xl md:text-4xl font-bold mb-6">The Spark</h2>
+                  <div class="w-16 h-1 bg-secondary mx-auto mb-8"></div>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div class="bg-primary-light rounded-lg p-6 shadow-lg story-card" data-aos="fade-up" data-aos-delay="100">
+                      <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                          </svg>
+                      </div>
+                      <h3 class="text-xl font-semibold mb-3">The Midnight Manifesto</h3>
+                      <p class="text-accent opacity-90">
+                          That night, they drafted what would later be known as the "Midnight Manifesto" – a commitment to create an organization that would bridge emergency response with long-term community resilience, all while remaining anonymous to ensure the focus stayed on the mission, not individuals.
+                      </p>
+                  </div>
+                  
+                  <div class="bg-primary-light rounded-lg p-6 shadow-lg story-card" data-aos="fade-up" data-aos-delay="200">
+                      <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                          </svg>
+                      </div>
+                      <h3 class="text-xl font-semibold mb-3">The First Project</h3>
+                      <p class="text-accent opacity-90">
+                          Their first initiative was modest: a community garden in one of the hardest-hit neighborhoods. But this garden became more than vegetables – it became a place of healing, connection, and renewal. Slowly, the local community began to rebuild not just homes, but hope.
+                      </p>
+                  </div>
+                  
+                  <div class="bg-primary-light rounded-lg p-6 shadow-lg story-card" data-aos="fade-up" data-aos-delay="300">
+                      <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                          </svg>
+                      </div>
+                      <h3 class="text-xl font-semibold mb-3">The Ripple Effect</h3>
+                      <p class="text-accent opacity-90">
+                          Word spread. Others joined. What had started as seven strangers soon grew to seventy, then seven hundred volunteers. The foundation's model of community-led recovery and development began to gain attention, not for who was behind it, but for how it worked.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <!-- Timeline Section -->
+  <section id="growth" class="observe-section py-20 md:py-28 bg-white">
+      <div class="container mx-auto px-4">
+          <div class="max-w-6xl mx-auto">
+              <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+                  <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Our Journey</h2>
+                  <div class="w-16 h-1 bg-secondary mx-auto mb-8"></div>
+                  <p class="text-lg max-w-3xl mx-auto">
+                      From a single community garden to a global movement of collective impact
+                  </p>
+              </div>
+              
+              <div class="timeline-container">
+                  <!-- 2015 -->
+                  <div class="md:text-right md:pr-8 py-6" data-aos="fade-right">
+                      <div class="bg-white p-6 rounded-lg shadow-lg inline-block text-left md:text-right">
+                          <h3 class="text-xl font-bold text-primary mb-2">2015</h3>
+                          <h4 class="text-lg font-semibold text-secondary mb-3">The Foundation Forms</h4>
+                          <p class="text-gray-700">
+                              Seven strangers unite after the coastal floods to create HopeSpark Foundation, committed to community-led recovery and development.
+                          </p>
+                      </div>
+                  </div>
+                  
+                  <div class="hidden md:block timeline-line relative">
+                      <div class="timeline-dot"></div>
+                  </div>
+                  
+                  <div class="md:hidden py-1"></div>
+                  
+                  <div class="md:pl-8 py-6 hidden md:block"></div>
+                  
+                  <!-- 2016 -->
+                  <div class="md:pl-8 py-6 hidden md:block"></div>
+                  
+                  <div class="hidden md:block timeline-line relative">
+                      <div class="timeline-dot"></div>
+                  </div>
+                  
+                  <div class="md:hidden py-1"></div>
+                  
+                  <div class="md:pl-8 py-6" data-aos="fade-left">
+                      <div class="bg-white p-6 rounded-lg shadow-lg">
+                          <h3 class="text-xl font-bold text-primary mb-2">2016</h3>
+                          <h4 class="text-lg font-semibold text-secondary mb-3">First Major Project</h4>
+                          <p class="text-gray-700">
+                              Launch of the "Community Resilience Network" in three states, training local leaders in disaster preparedness and community rebuilding.
+                          </p>
+                      </div>
+                  </div>
+                  
+                  <!-- 2018 -->
+                  <div class="md:text-right md:pr-8 py-6" data-aos="fade-right">
+                      <div class="bg-white p-6 rounded-lg shadow-lg inline-block text-left md:text-right">
+                          <h3 class="text-xl font-bold text-primary mb-2">2018</h3>
+                          <h4 class="text-lg font-semibold text-secondary mb-3">International Expansion</h4>
+                          <p class="text-gray-700">
+                              HopeSpark expands to South America and Southeast Asia, adapting its model to diverse cultural contexts while maintaining its core principles.
+                          </p>
+                      </div>
+                  </div>
+                  
+                  <div class="hidden md:block timeline-line relative">
+                      <div class="timeline-dot"></div>
+                  </div>
+                  
+                  <div class="md:hidden py-1"></div>
+                  
+                  <div class="md:pl-8 py-6 hidden md:block"></div>
+                  
+                  <!-- 2020 -->
+                  <div class="md:pl-8 py-6 hidden md:block"></div>
+                  
+                  <div class="hidden md:block timeline-line relative">
+                      <div class="timeline-dot"></div>
+                  </div>
+                  
+                  <div class="md:hidden py-1"></div>
+                  
+                  <div class="md:pl-8 py-6" data-aos="fade-left">
+                      <div class="bg-white p-6 rounded-lg shadow-lg">
+                          <h3 class="text-xl font-bold text-primary mb-2">2020</h3>
+                          <h4 class="text-lg font-semibold text-secondary mb-3">Pandemic Response</h4>
+                          <p class="text-gray-700">
+                              Rapid pivot to address COVID-19 challenges, developing the "Neighbors Supporting Neighbors" initiative that would later become a model for community-based healthcare resilience.
+                          </p>
+                      </div>
+                  </div>
+                  
+                  <!-- 2022 -->
+                  <div class="md:text-right md:pr-8 py-6" data-aos="fade-right">
+                      <div class="bg-white p-6 rounded-lg shadow-lg inline-block text-left md:text-right">
+                          <h3 class="text-xl font-bold text-primary mb-2">2022</h3>
+                          <h4 class="text-lg font-semibold text-secondary mb-3">Climate Resilience Focus</h4>
+                          <p class="text-gray-700">
+                              Launch of the "Sustainable Futures Initiative," integrating climate adaptation strategies into all HopeSpark programs worldwide.
+                          </p>
+                      </div>
+                  </div>
+                  
+                  <div class="hidden md:block timeline-line relative">
+                      <div class="timeline-dot"></div>
+                  </div>
+                  
+                  <div class="md:hidden py-1"></div>
+                  
+                  <div class="md:pl-8 py-6 hidden md:block"></div>
+                  
+                  <!-- Present -->
+                  <div class="md:pl-8 py-6 hidden md:block"></div>
+                  
+                  <div class="hidden md:block timeline-line relative">
+                      <div class="timeline-dot"></div>
+                  </div>
+                  
+                  <div class="md:hidden py-1"></div>
+                  
+                  <div class="md:pl-8 py-6" data-aos="fade-left">
+                      <div class="bg-white p-6 rounded-lg shadow-lg">
+                          <h3 class="text-xl font-bold text-primary mb-2">Today</h3>
+                          <h4 class="text-lg font-semibold text-secondary mb-3">Global Impact</h4>
+                          <p class="text-gray-700">
+                              HopeSpark operates in 27 countries, has empowered over 1.2 million people through its programs, and remains committed to its founding principle: community-led transformation.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  <!-- Philosophy Section -->
+  <section id="philosophy" class="observe-section py-20 md:py-28 bg-primary text-light relative">
+      <div class="container mx-auto px-4">
+          <div class="max-w-6xl mx-auto">
+              <div class="text-center mb-16" data-aos="fade-up" data-aos-duration="1000">
+                  <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Philosophy</h2>
+                  <div class="w-16 h-1 bg-secondary mx-auto mb-8"></div>
+              </div>
+              
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                  <div class="relative" data-aos="fade-right" data-aos-duration="1200">
+                      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                          <path fill="none" stroke="#D4A017" stroke-width="1" class="spark-path" d="M100,10 C130,30 170,60 180,100 C190,140 150,170 100,180 C50,190 10,150 20,100 C30,50 70,30 100,10 Z" />
+                          <g transform="translate(60, 60)">
+                              <circle cx="40" cy="40" r="35" fill="#3A5375" />
+                              <text x="40" y="45" font-family="Arial" font-size="12" text-anchor="middle" fill="#F8F5F0">HOPE</text>
+                          </g>
+                          <g transform="translate(25, 120)">
+                              <circle cx="25" cy="25" r="20" fill="#D4A017" />
+                              <text x="25" y="28" font-family="Arial" font-size="7" text-anchor="middle" fill="#ffffff">COMMUNITY</text>
+                          </g>
+                          <g transform="translate(140, 80)">
+                              <circle cx="25" cy="25" r="20" fill="#D4A017" />
+                              <text x="25" y="28" font-family="Arial" font-size="7" text-anchor="middle" fill="#ffffff">RESILIENCE</text>
+                          </g>
+                          <g transform="translate(85, 150)">
+                              <circle cx="25" cy="25" r="20" fill="#D4A017" />
+                              <text x="25" y="28" font-family="Arial" font-size="7" text-anchor="middle" fill="#ffffff">SUSTAINABILITY</text>
+                          </g>
+                      </svg>
+                  </div>
+                  
+                  <div class="animate-in-view">
+                      <h3 class="text-2xl font-bold mb-4 staggered-fade-in">The Collective Impact Approach</h3>
+                      <p class="mb-6 leading-relaxed staggered-fade-in">
+                          From our inception, HopeSpark has embraced anonymity not as secrecy, but as a statement about our core belief: true change comes from collaborative effort, not individual heroism.
+                      </p>
+                      
+                      <h3 class="text-2xl font-bold mb-4 staggered-fade-in">Our Guiding Principles</h3>
+                      <ul class="space-y-4">
+                          <li class="flex items-start staggered-fade-in">
+                              <div class="flex-shrink-0 w-6 h-6 bg-secondary rounded-full flex items-center justify-center mt-1 mr-3">
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                  </svg>
+                              </div>
+                              <p><span class="font-semibold">Community Ownership:</span> Solutions must be developed with, not for, communities.</p>
+                          </li>
+                          <li class="flex items-start staggered-fade-in">
+                              <div class="flex-shrink-0 w-6 h-6 bg-secondary rounded-full flex items-center justify-center mt-1 mr-3">
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24"
+
+                              stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                      </div>
+                      <p><span class="font-semibold">Sustainable Solutions:</span> Programs must be environmentally conscious and economically viable long-term.</p>
+                  </li>
+                  <li class="flex items-start staggered-fade-in">
+                      <div class="flex-shrink-0 w-6 h-6 bg-secondary rounded-full flex items-center justify-center mt-1 mr-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                      </div>
+                      <p><span class="font-semibold">Collective Wisdom:</span> We believe solutions emerge from diverse perspectives working together.</p>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+        
+    </main>
+<br><br>
+    <!-- Footer Section -->
+ <footer class="footer-container">
+    <div class="footer-wave">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
+    </div>
+
+    <div class="footer-content">
+      <!-- Logo & Description Section -->
+      <div class="footer-logo-section ml-2">
+        <div class="footer-logo">HopeSpark Foundation</div>
+        <p class="footer-tagline">Illuminating paths to a brighter future, empowering communities through compassion, innovation, and sustainable change.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+<br>
+      <!-- Quick Links Section -->
+      <div class="footer-links-section">
+        <h3 class="footer-heading">Quick Links</h3>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="story.html">About Us</a></li>
+          <li class="footer-link"><a href="projects.html">Our Projects</a></li>
+          <li class="footer-link"><a href="employment.html">Get Involved</a></li>
+          <li class="footer-link"><a href="customer-support.html">Donate Now</a></li>
+          <li class="footer-link"><a href="testimonial.html">News & Events</a></li>
+          <li class="footer-link"><a href="customer-support.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs Section -->
+      <div class="footer-links-section">
+        <h3 class="footer-heading">Our Programs</h3>
+        <ul class="footer-links">
+          <li class="footer-link"><a href="#">Education Fund</a></li>
+          <li class="footer-link"><a href="#">Clean Water Initiative</a></li>
+          <li class="footer-link"><a href="#">Healthcare Access</a></li>
+          <li class="footer-link"><a href="#">Youth Empowerment</a></li>
+          <li class="footer-link"><a href="#">Disaster Relief</a></li>
+          <li class="footer-link"><a href="#">Community Building</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Newsletter Section -->
+      <div class="footer-contact-section">
+        <h3 class="footer-heading">Get In Touch</h3>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>1234 Hope Street, Charity Lane<br>New York, NY 10001</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div>+1 (555) 123-4567</div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <a href="mailto:contact.hopespark@gamil.com"><div>info@hopesparkfoundation.org</div></a>
+          </div>
+        </div>
+
+        <h3 class="footer-heading">Newsletter</h3>
+        <div class="newsletter-form">
+            <form id="contact-form">
+          <div class="form-group">
+            <input name="newsletter-form" type="email" class="newsletter-input" placeholder="Your email address">
+            <button type="submit" class="submit-btn">Subscribe</button>
+          </div>
+          <p class="newsletter-disclaimer">Subscribe to get updates on our projects and impact stories.</p>
+          <div id="form-message" class="text-center text-white mt-4"></div> <!-- Success/Error Message Container -->
+
+        </form>
+        </div>
+
+        <div class="trust-badges">
+          <div class="trust-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>501(c)(3) Certified</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-check-circle"></i>
+            <span>Transparency Pledge</span>
+          </div>
+          <div class="trust-badge">
+            <i class="fas fa-award"></i>
+            <span>Top-Rated Charity</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <div class="copyright">
+          &copy; 2025 HopeSpark Foundation. All rights reserved. Made with <i class="fas fa-heart heart-icon"></i> for a better world.
+        </div>
+        <div class="footer-bottom-links">
+          <a href=" https://www.termsfeed.com/live/5ef78e38-8cea-4cee-86d0-0ccd13afc3fa"  target="_blank" rel="noopener" class="footer-bottom-link">Privacy Policy</a>
+          <a href=" https://www.termsfeed.com/live/5ef78e38-8cea-4cee-86d0-0ccd13afc3fa"  target="_blank" rel="noopener" class="footer-bottom-link">Terms of Service</a>
+          <a href=" https://www.termsfeed.com/live/5ef78e38-8cea-4cee-86d0-0ccd13afc3fa"  target="_blank" rel="noopener" class="footer-bottom-link">Cookie Policy</a>
+          <a href=" https://www.termsfeed.com/live/5ef78e38-8cea-4cee-86d0-0ccd13afc3fa"  target="_blank" rel="noopener" class="footer-bottom-link">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+  <div class="chat-container">
+    <button class="chat-button" aria-label="Open chat">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+    </button>
+    
+    
+</div>
+
+    <script>
+        // Simplified Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.loader').style.display = 'none';
+            }, 500);
+        });
+        // Back to top button functionality
+ const backToTopButton = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+        document.querySelector('.chat-button').addEventListener('click', function() {
+    const container = this.closest('.chat-container');
+    container.classList.add('chat-visible');
+    
+    setTimeout(() => {
+        // Replace with actual page load logic
+        window.location.href = 'customer-support.html'; 
+    }, 1500);
+});
+
+    document.getElementById("contact-form").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const form = event.target;
+    const formData = new FormData(form);
+    const messageBox = document.getElementById("form-message");
+
+    // Convert FormData to JSON
+    const formObject = {};
+    formData.forEach((value, key) => { formObject[key] = value; });
+
+    try {
+        const response = await fetch("https://formspree.io/f/xzzepopw", {
+            method: "POST",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formObject) // Send data as JSON
+        });
+
+        if (response.ok) {
+            messageBox.innerHTML = "<p class='text-green-500 font-semibold'>Thanks! The form was submitted successfully.</p>";
+            form.reset(); // ✅ Clears input fields after successful submission
+        } else {
+            messageBox.innerHTML = "<p class='text-red-500 font-semibold'>Oops! Something went wrong. Please try again.</p>";
+        }
+    } catch (error) {
+        messageBox.innerHTML = "<p class='text-red-500 font-semibold'>Network error! Please check your connection.</p>";
+    }
+
+    // ✅ Clears the message after 5 seconds
+    setTimeout(() => { messageBox.innerHTML = ""; }, 5000);
+});
+AOS.init({
+        duration: 1000,
+        once: false,
+        easing: 'ease-in-out'
+    });
+
+        // Initialize AOS
+        AOS.init();
+    </script>
+</body>
+</html>
