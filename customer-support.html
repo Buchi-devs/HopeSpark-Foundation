@@ -12,6 +12,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png"s="32x32" href="https://cdn-icons-png.flaticon.com/128/3010/3010989.png">
 
     <style>
         :root {
@@ -89,82 +90,15 @@
             <div class="flex items-center justify-between h-full">
                 <!-- Home Logo -->
                 <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <div class="w-10 h-10 bg-[var(--primary)] rounded-lg flex items-center justify-center">
-                        <svg width="700" height="700" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                              <!-- Circular border gradient -->
-                              <radialGradient id="borderGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                                <stop offset="0%" style="stop-color:#ccc; stop-opacity:1"/>
-                                <stop offset="100%" style="stop-color:#666; stop-opacity:1"/>
-                              </radialGradient>
-                              
-                              <!-- Heart gradient for a vibrant red look -->
-                              <linearGradient id="heartGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#ff4d4d;stop-opacity:1"/>
-                                <stop offset="100%" style="stop-color:#b30000;stop-opacity:1"/>
-                              </linearGradient>
-                              
-                              <!-- Drop shadow filter for extra depth (applied to the heart) -->
-                              <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
-                                <feOffset dx="4" dy="4" result="offsetBlur"/>
-                                <feMerge>
-                                  <feMergeNode/>
-                                  <feMergeNode in="SourceGraphic"/>
-                                </feMerge>
-                              </filter>
-                              
-                              <!-- Filter combining a subtle blur, offset and texture (for a realistic hand effect) -->
-                              <filter id="handFilter" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
-                                <feOffset in="blur" dx="2" dy="2" result="offsetBlur"/>
-                                <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise"/>
-                                <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" result="displaced"/>
-                                <feMerge>
-                                  <feMergeNode in="offsetBlur"/>
-                                  <feMergeNode in="displaced"/>
-                                </feMerge>
-                              </filter>
-                              
-                              <!-- Hand gradient for a natural skin tone -->
-                              <linearGradient id="handGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#f5c6a5;stop-opacity:1"/>
-                                <stop offset="100%" style="stop-color:#d2a679;stop-opacity:1"/>
-                              </linearGradient>
-                            </defs>
-                            
-                            <!-- Circular border -->
-                            <circle cx="250" cy="250" r="240" fill="none" stroke="url(#borderGradient)" stroke-width="10"/>
-                            
-                            <!-- Heart shape with a drop shadow -->
-                            <path d="M250 180 
-                                     C200 120, 100 120, 100 220 
-                                     C100 300, 250 380, 250 380 
-                                     C250 380, 400 300, 400 220 
-                                     C400 120, 300 120, 250 180 Z" 
-                                  fill="url(#heartGradient)" 
-                                  filter="url(#dropShadow)"/>
-                            
-                            <!-- Left hand raising the heart -->
-                            <path d="M140,320 
-                                     C130,325, 125,340, 130,355 
-                                     C135,370, 150,375, 160,370 
-                                     C170,365, 175,350, 170,340 
-                                     C165,330, 155,325, 140,320 Z" 
-                                  fill="url(#handGradient)" 
-                                  filter="url(#handFilter)"/>
-                            
-                            <!-- Right hand (mirrored) -->
-                            <path d="M360,320 
-                                     C370,325, 375,340, 370,355 
-                                     C365,370, 350,375, 340,370 
-                                     C330,365, 325,350, 330,340 
-                                     C335,330, 345,325, 360,320 Z" 
-                                  fill="url(#handGradient)" 
-                                  filter="url(#handFilter)"/>
-                          </svg>
+                    <div class="flex items-center space-x-2 group">
+                        <div class="w-8 h-8  rounded-lg flex items-center justify-center 
+                                  transition-transform duration-300 group-hover:rotate-12">
+                                  
+                           <img src="https://cdn-icons-png.flaticon.com/128/3010/3010989.png">
+                                 
+                        </div>
+                        <span class="text-xl brand-font text-[var(--primary)]">HopeSpark Foundation</span>
                     </div>
-                    <span class="brand-font text-xl text-[var(--primary)]">HopeSpark Foundation</span>
                 </a>
 
                 <!-- Desktop Menu -->
