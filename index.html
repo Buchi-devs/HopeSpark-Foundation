@@ -797,59 +797,51 @@
     <div class="loader">
         <div class="loader-text">HOPESPARK<br>FOUNDATION</div>
     </div>
-   <!-- Enhanced Navbar -->
-   <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 h-16 md:h-20"
-        data-aos="fade-down">
-       <div class="container mx-auto px-4 h-full">
-           <div class="flex items-center justify-between h-full">
-               <!-- Logo -->
-               <div class="flex items-center space-x-2 group">
-                   <div class="w-8 h-8  rounded-lg flex items-center justify-center 
-                             transition-transform duration-300 group-hover:rotate-12">
-                             
-                      <img src="https://cdn-icons-png.flaticon.com/128/3010/3010989.png">
-                            
-                   </div>
-                   <span class="text-xl brand-font text-[var(--primary)]">HopeSpark Foundation</span>
-               </div>
+ <!-- Enhanced Navbar -->
+<nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 h-16 md:h-20">
+  <div class="container mx-auto px-4 h-full">
+      <div class="flex items-center justify-between h-full">
+          <!-- Logo -->
+          <div class="flex items-center space-x-2 group">
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:rotate-12">
+                  <img src="https://cdn-icons-png.flaticon.com/128/3010/3010989.png">
+              </div>
+              <span class="text-xl brand-font text-[var(--primary)]">HopeSpark Foundation</span>
+          </div>
 
-               <!-- Desktop Menu -->
-               <div class="hidden md:flex items-center space-x-8 text-[var(--primary)]">
-                   <a href="charity.html" class="nav-link">Charity</a>
-                   <a href="story.html" class="nav-link">Our Story</a>
-                   <a href="testimonial.html" class="nav-link">Testimonials</a>
-                   <a href="projects.html" class="nav-link">Projects</a>
-                   <a href="employment.html" class="nav-link">Get Employed!</a>
-               </div>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8 text-[var(--primary)]">
+              <a href="charity.html" class="nav-link">Charity</a>
+              <a href="story.html" class="nav-link">Our Story</a>
+              <a href="testimonial.html" class="nav-link">Testimonials</a>
+              <a href="projects.html" class="nav-link">Projects</a>
+              <a href="employment.html" class="nav-link">Get Employed!</a>
+          </div>
 
-               <button @click="isMenuOpen = !isMenuOpen" 
-                       class="md:hidden text-[var(--primary)]">
-                   <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                   </svg>
-               </button>
-           </div>
-       </div>
-   </nav>
+          <!-- Mobile Menu Button -->
+          <button id="menuToggle" class="md:hidden text-[var(--primary)]">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+              </svg>
+          </button>
+      </div>
+  </div>
+</nav>
 
-   <!-- Mobile Menu -->
-   <div class="md:hidden fixed w-full z-40 top-16" 
-        x-show="isMenuOpen"
-        x-transition:enter="transition ease-out duration-300"
-        x-transition:leave="transition ease-in duration-200">
-       <div class="bg-white/95 backdrop-blur-lg shadow-xl">
-           <div class="container mx-auto px-4 py-4">
-               <div class="flex flex-col space-y-3 text-[var(--primary)]">
-                   <li><a href="charity.html" class="nav-link py-2" @click="isMenuOpen">Charity</a></li> 
-                   <li><a href="story.html" class="nav-link py-2" @click="isMenuOpen">Our Story</a></li>
-                   <li><a href="testimonial.html" class="nav-link py-2" @click="isMenuOpen">Testimonials</a></li>
-                   <li><a href="projects.html" class="nav-link py-2" @click="isMenuOpen">Projects</a></li>
-                   <li><a href="employment.html" class="nav-link py-2" @click="isMenuOpen">Get Employed!</a></li>
-               </div>
-           </div>
-       </div>
-   </div>
-
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="md:hidden fixed w-full z-40 top-16 hidden transition-all duration-300 ease-in-out">
+  <div class="bg-white/95 backdrop-blur-lg shadow-xl">
+      <div class="container mx-auto px-4 py-4">
+          <div class="flex flex-col space-y-3 text-[var(--primary)]">
+              <a href="charity.html" class="nav-link py-2">Charity</a>
+              <a href="story.html" class="nav-link py-2">Our Story</a>
+              <a href="testimonial.html" class="nav-link py-2">Testimonials</a>
+              <a href="projects.html" class="nav-link py-2">Projects</a>
+              <a href="employment.html" class="nav-link py-2">Get Employed!</a>
+          </div>
+      </div>
+  </div>
+</div>
    <!-- Hero Section -->
    <section class="pt-20 pb-12 md:py-24 hero-bg">
        <!-- Floating Lights Background -->
@@ -951,11 +943,11 @@
                         setTimeout(() => word.classList.add('opacity-100'), i * 150);
                     });
                 })">
-                <span class="opacity-0 transition-opacity duration-500">Empowering</span>
-                <span class="opacity-0 transition-opacity duration-500"> Communities</span>
-                <span class="opacity-0 transition-opacity duration-500"> Through</span>
-                <span class="opacity-0 transition-opacity duration-500"> Sustainable</span>
-                <span class="impact-number opacity-0 transition-opacity duration-500"> Solutions</span>
+                <span class=" transition-opacity duration-500">Empowering</span>
+                <span class="transition-opacity duration-500"> Communities</span>
+                <span class=" transition-opacity duration-500"> Through</span>
+                <span class=" transition-opacity duration-500"> Sustainable</span>
+                <span class="impact-number transition-opacity duration-500"> Solutions</span>
             </h2>
 
             <div class="flex flex-col md:flex-row justify-center gap-4 mt-12">
@@ -1051,9 +1043,9 @@
                 setTimeout(() => word.classList.add('opacity-100'), i * 150);
             });
         })">
-        <span class="opacity-0 transition-opacity duration-500">The</span>
-        <span class="opacity-0 transition-opacity duration-500">Process of  </span>
-        <span class="impact-number opacity-0 transition-opacity duration-500"> Change</span>
+        <span class=" transition-opacity duration-500">The</span>
+        <span class="transition-opacity duration-500">Process of  </span>
+        <span class="impact-number transition-opacity duration-500"> Change</span>
     </h2>
    </div>
 <div class="container mx-auto px-4 mb-28" data-aos="fade-up">
@@ -1549,6 +1541,21 @@ document.getElementById("contact-form").addEventListener("submit", async functio
 
     // ✅ Clears the message after 5 seconds
     setTimeout(() => { messageBox.innerHTML = ""; }, 5000);
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll("#mobileMenu a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        });
+    });
 });
 
     // Custom scroll handler for narrative section

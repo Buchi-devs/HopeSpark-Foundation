@@ -647,54 +647,49 @@
     </div>
 
     <!-- Simplified Navbar -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b z-50 h-20">
-        <div class="container mx-auto px-4 h-full">
-            <div class="flex items-center justify-between h-full">
-                <!-- Home Logo -->
-                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <div class="flex items-center space-x-2 group">
-                    <div class="w-8 h-8  rounded-lg flex items-center justify-center 
-                              transition-transform duration-300 group-hover:rotate-12">
-                              
-                       <img src="https://cdn-icons-png.flaticon.com/128/3010/3010989.png">
-                             
-                    </div>
-                    <span class="text-xl brand-font text-[var(--primary)]">HopeSpark Foundation</span>
-                </div>
-                </a>
+<nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b z-50 h-20">
+  <div class="container mx-auto px-4 h-full">
+      <div class="flex items-center justify-between h-full">
+          <!-- Home Logo -->
+          <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <div class="flex items-center space-x-2 group">
+                  <div class="w-8 h-8 rounded-lg flex items-center justify-center 
+                            transition-transform duration-300 group-hover:rotate-12">
+                      <img src="https://cdn-icons-png.flaticon.com/128/3010/3010989.png">
+                  </div>
+                  <span class="text-xl brand-font text-[var(--primary)]">HopeSpark Foundation</span>
+              </div>
+          </a>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-6 text-[var(--primary)] font-bold">
-                    <a href="index.html" class="nav-link"><i class="fas fa-home mr-2"></i>Home</a>
-                    <a href="charity.html" class="nav-link">Charity</a>
-                    <a href="story.html" class="nav-link">Our Story</a>
-                    <a href="projects.html" class="nav-link">Projects</a>
-                    <a href="employment.html" class="nav-link">Get Employed!</a>
-                </div>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center gap-6 text-[var(--primary)] font-bold">
+              <a href="index.html" class="nav-link"><i class="fas fa-home mr-2"></i>Home</a>
+              <a href="charity.html" class="nav-link">Charity</a>
+              <a href="story.html" class="nav-link">Our Story</a>
+              <a href="projects.html" class="nav-link">Projects</a>
+              <a href="employment.html" class="nav-link">Get Employed!</a>
+          </div>
 
-                <!-- Mobile Menu Button -->
-                <button @click="isMenuOpen = !isMenuOpen" class="md:hidden text-2xl text-[var(--primary)]">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+          <!-- Mobile Menu Button -->
+          <button id="menuToggle" class="md:hidden text-2xl text-[var(--primary)]">
+              <i class="fas fa-bars"></i>
+          </button>
+      </div>
+  </div>
+</nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu fixed w-full bg-white/95 backdrop-blur-lg shadow-xl" 
-         x-show="isMenuOpen"
-         x-transition:enter="transition ease-out duration-300"
-         x-transition:leave="transition ease-in duration-200">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex flex-col gap-3 text-[var(--primary)]">
-                <a href="index.html" class="nav-link p-2" @click="isMenuOpen = false"><i class="fas fa-home mr-2"></i>Home</a>
-                <a href="charity.html" class="nav-link p-2" @click="isMenuOpen = false">Charity</a>
-                <a href="story.html" class="nav-link p-2" @click="isMenuOpen = false">Our Story</a>
-                <a href="projects.html" class="nav-link p-2" @click="isMenuOpen = false">Projects</a>
-                <a href="employment.html" class="nav-link p-2" @click="isMenuOpen = false">Employment</a>
-            </div>
-        </div>
-    </div>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu fixed w-full bg-white/95 backdrop-blur-lg shadow-xl hidden">
+  <div class="container mx-auto px-4 py-4">
+      <div class="flex flex-col gap-3 text-[var(--primary)]">
+          <a href="index.html" class="nav-link p-2">Home</a>
+          <a href="charity.html" class="nav-link p-2">Charity</a>
+          <a href="story.html" class="nav-link p-2">Our Story</a>
+          <a href="projects.html" class="nav-link p-2">Projects</a>
+          <a href="employment.html" class="nav-link p-2">Employment</a>
+      </div>
+  </div>
+</div>
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8 min-h-screen">
@@ -1264,6 +1259,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
       }, 2000);
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll("#mobileMenu a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        });
+    });
+});
 
         // Initialize AOS
         AOS.init();
