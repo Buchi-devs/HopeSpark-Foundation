@@ -43,12 +43,12 @@
    <!-- Custom Styles -->
    <style>
         :root {
-      --primary: #2A4365;
-      --secondary: #D4A017;
-      --accent: #F8F5F0;
-      --primary-light: #3A5375;
-      --secondary-light: #E4B027;
-      --text-light: #F8F5F0;
+      --primary: #2a7f62;
+      --secondary: #d9a23d;
+      --accent: #f3f3f3;
+      --primary-light: #67a98f;
+      --secondary-light: #e8c676;
+      --text-light: #Ffffff;
       --text-dark: #333333;
         }
       /* Custom scrollbar */
@@ -788,7 +788,9 @@
         left: 20px;
       }
     }
-
+    .brand-name{
+      font-family:Arial, Helvetica, sans-serif;
+    }
    </style>
 </head>
 
@@ -802,11 +804,11 @@
   <div class="container mx-auto px-4 h-full">
       <div class="flex items-center justify-between h-full">
           <!-- Logo -->
-          <div class="flex items-center space-x-2 group">
+          <div class="flex items-center py-24 space-x-2 group">
               <div class="w-8 h-8 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:rotate-12">
                   <img src="https://cdn-icons-png.flaticon.com/128/3010/3010989.png">
               </div>
-              <span class="text-xl brand-font text-[var(--primary)]">HopeSpark Foundation</span>
+              <span class="md:text-4xl  text-2xl font-bold brand-name text-[var(--primary)]">HopeSpark Foundation</span>
           </div>
 
           <!-- Desktop Menu -->
@@ -815,6 +817,8 @@
               <a href="story.html" class="nav-link">Our Story</a>
               <a href="testimonial.html" class="nav-link">Testimonials</a>
               <a href="projects.html" class="nav-link">Projects</a>
+              <a href="team.html" class="nav-link">Our Team</a>
+
               <a href="employment.html" class="nav-link">Get Employed!</a>
           </div>
 
@@ -895,14 +899,14 @@
                <div class="md:w-1/2 w-full" data-aos="fade-left">
                    <div class="grid grid-cols-2 gap-4">
                        <div class="col-span-2 relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                           <img src="https://images.unsplash.com/photo-1623399785089-dd231208ef33?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHBvb3IlMjBwZW9wbGV8ZW58MHx8MHx8fDA%3D" 
+                           <img src="https://i.pinimg.com/736x/09/4b/ff/094bff74b32ae919694d3c0ae5004230.jpg" 
                                 alt="Community receiving food supplies"
                                 class="w-full h-64 md:h-80 object-cover transform transition duration-500 hover:scale-105">
                            <div class="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/40 to-transparent"></div>
                        </div>
                        
                        <div class="relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-                           <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9vciUyMHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" 
+                           <img src="https://i.pinimg.com/736x/04/e3/29/04e329164ea37979bb5f4e12ee8e29e3.jpg" 
                                 alt="Smiling child holding books"
                                 class="w-full h-48 md:h-56 object-cover transform transition duration-500 hover:scale-105">
                        </div>
@@ -1026,7 +1030,7 @@
                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16 mb-4 text-[var(--secondary)] hover:scale-110 transition-transform">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <div class="stat-number text-4xl font-bold text-[var(--primary)]">$1M+</div>
+                    <div class="stat-number text-4xl font-bold text-[var(--primary)]">$19.6M</div>
                     <div class="text-gray-600">Funds Raised</div>
                 </div>
             </div>

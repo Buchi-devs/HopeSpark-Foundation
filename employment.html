@@ -90,15 +90,15 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        primary: '#2A4365',
-                        secondary: '#D4A017',
-                        accent: '#F8F5F0',
-                        'primary-light': '#3A5375',
-                        'secondary-light': '#E4B027',
-                        'text-light': '#F8F5F0',
-                        'text-dark': '#333333',
-                    },
+                  colors: {
+                      primary: '#2a7f62',
+                      'primary-light': '#67a98f',
+                      secondary: '#d9a23d',
+                      'secondary-light': '#e8c676',
+                      accent: '#f3f3f3',
+                      'text-light': '#Ffffff',
+                      'text-dark': '#333333',
+                  },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                     },
@@ -122,12 +122,12 @@
     </script>
     <style>
         :root {
-            --primary: #2A4365;
-      --secondary: #D4A017;
-      --accent: #F8F5F0;
-      --primary-light: #3A5375;
-      --secondary-light: #E4B027;
-      --text-light: #F8F5F0;
+      --primary: #2a7f62;
+      --secondary: #d9a23d;
+      --accent: #f3f3f3;
+      --primary-light: #67a98f;
+      --secondary-light: #e8c676;
+      --text-light: #Ffffff;
       --text-dark: #333333;
         }
 
@@ -687,6 +687,10 @@
         left: 20px;
       }
     }
+
+    .brand-name{
+      font-family:Arial, Helvetica, sans-serif;
+    }
  </style>
 </head>
 
@@ -708,7 +712,7 @@
                             transition-transform duration-300 group-hover:rotate-12">
                       <img src="https://cdn-icons-png.flaticon.com/128/3010/3010989.png">
                   </div>
-                  <span class="text-xl brand-font text-[var(--primary)]">HopeSpark Foundation</span>
+                  <span class="md:text-4xl  text-2xl font-bold brand-name text-[var(--primary)]">HopeSpark Foundation</span>
               </div>
           </a>
 
