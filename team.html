@@ -692,6 +692,8 @@
                 <div class="hidden md:flex items-center gap-6 text-[var(--primary)] font-bold">
                     <a href="index.html" class="nav-link"><i class="fas fa-home mr-2"></i>Home</a>
                     <a href="story.html" class="nav-link">Our Story</a>
+                    <a href="charity.html" class="nav-link">Charity</a>
+
                     <a href="testimonial.html" class="nav-link">Testimonials</a>
                     <a href="projects.html" class="nav-link">Projects</a>
                     <a href="employment.html" class="nav-link">Get Employed!</a>
@@ -714,6 +716,7 @@
             <div class="flex flex-col gap-3 text-[var(--primary)]">
                 <a href="index.html" class="nav-link p-2" @click="isMenuOpen = false"><i class="fas fa-home mr-2"></i>Home</a>
                 <a href="story.html" class="nav-link p-2" @click="isMenuOpen = false">Our Story</a>
+                <a href="charity.html" class="nav-link p-2" @click="isMenuOpen = false">Charity</a>
                 <a href="testimonial.html" class="nav-link p-2" @click="isMenuOpen = false">Testimonials</a>
                 <a href="projects.html" class="nav-link p-2" @click="isMenuOpen = false">Projects</a>
                 <a href="employment.html" class="nav-link p-2" @click="isMenuOpen = false">Get Employed!</a>
@@ -728,7 +731,7 @@
             <p class="text-xl md:text-2xl max-w-3xl mx-auto" style="color: var(--text-dark);">Meet the celebrities who are changing the world through their extraordinary charitable efforts.</p>
         </header>
     
-        <div class="filter-nav py-4 sticky top-0 z-10 bg-white/80 backdrop-blur-md shadow-md">
+        <div class="filter-nav py-4 top-0 z-10 bg-white/80 backdrop-blur-md shadow-md">
             <div class="container mx-auto flex flex-wrap justify-center gap-4">
                 <button class="filter-btn px-6 py-2 rounded-full font-medium text-sm md:text-base active" style="background-color: var(--primary); color: var(--text-light);" data-filter="all">All</button>
                 <button class="filter-btn px-6 py-2 rounded-full font-medium text-sm md:text-base" style="background-color: var(--primary-light); color: var(--text-light);" data-filter="children">Children</button>
@@ -751,7 +754,7 @@
                 <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="children education">
                     <div class="relative">
                         <div class="hex-container">
-                            <img src="/api/placeholder/400/400" alt="Keanu Reeves" class="w-full h-full object-cover">
+                            <img src="https://i.pinimg.com/736x/93/5c/e4/935ce40de104cf62dd4d00ded0be7fdb.jpg" alt="Keanu Reeves" class="w-full h-full object-cover">
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                             <div class="p-4 text-white">
@@ -762,8 +765,8 @@
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$50M+ donated</span>
-                            <span class="text-sm font-medium" style="color: var(--primary);">Since 2003</span>
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$5M+ donated</span>
+                            <span class="text-sm font-medium" style="color: var(--primary);">Since 2012</span>
                         </div>
                         <p class="text-sm mb-4">Known for his quiet generosity, Keanu has donated millions to children's hospitals and cancer research, inspired by his sister's battle with leukemia.</p>
                         <div class="flex flex-wrap gap-2">
@@ -777,7 +780,7 @@
                 <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="education health">
                     <div class="relative">
                         <div class="hex-container">
-                            <img src="/api/placeholder/400/400" alt="Dolly Parton" class="w-full h-full object-cover">
+                            <img src="https://i.pinimg.com/736x/9a/94/be/9a94be6eae4e4e1f636f0931f8fb2f3b.jpg" alt="Dolly Parton" class="w-full h-full object-cover">
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                             <div class="p-4 text-white">
@@ -788,10 +791,10 @@
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">200M+ books donated</span>
-                            <span class="text-sm font-medium" style="color: var(--primary);">Since 1995</span>
+                            <span class="px-3 py-1 text-[12px] font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">200M+ books & tech gadgets donated</span>
+                            <span class="text-sm font-medium" style="color: var(--primary);">Since 2015</span>
                         </div>
-                        <p class="text-sm mb-4">Through her Imagination Library, Dolly has donated over 200 million books to children. She also donated $1M to COVID-19 vaccine research.</p>
+                        <p class="text-sm mb-4">Through her Imagination Library, Dolly has donated over 200 million books and tech gadgets to children. She also donated $1M to COVID-19 vaccine research.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Education</span>
                             <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Health</span>
@@ -803,7 +806,7 @@
                 <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="environment health">
                     <div class="relative">
                         <div class="hex-container">
-                            <img src="/api/placeholder/400/400" alt="Leonardo DiCaprio" class="w-full h-full object-cover">
+                            <img src="https://i.pinimg.com/736x/71/eb/55/71eb55705fc1b9a195551e2f9d32e769.jpg" alt="Leonardo DiCaprio" class="w-full h-full object-cover">
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                             <div class="p-4 text-white">
@@ -814,10 +817,10 @@
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$100M+ donated</span>
-                            <span class="text-sm font-medium" style="color: var(--primary);">Since 1998</span>
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$10M+ donated</span>
+                            <span class="text-sm font-medium" style="color: var(--primary);">Since 2013</span>
                         </div>
-                        <p class="text-sm mb-4">Through his foundation, Leo has awarded over $100M in grants to environmental organizations working to protect wildlife and restore balance to threatened ecosystems.</p>
+                        <p class="text-sm mb-4">Through his foundation, Leo has awarded over $10M in grants to environmental organizations working to protect wildlife and restore balance to threatened ecosystems.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Environment</span>
                             <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Health</span>
@@ -829,7 +832,7 @@
                 <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="children education">
                     <div class="relative">
                         <div class="hex-container">
-                            <img src="/api/placeholder/400/400" alt="Chance the Rapper" class="w-full h-full object-cover">
+                            <img src="https://i.pinimg.com/736x/07/b2/1e/07b21e5b4003f1fa25293354d154920e.jpg" alt="Chance the Rapper" class="w-full h-full object-cover">
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                             <div class="p-4 text-white">
@@ -855,7 +858,7 @@
                 <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="children health">
                     <div class="relative">
                         <div class="hex-container">
-                            <img src="/api/placeholder/400/400" alt="Mila Kunis" class="w-full h-full object-cover">
+                            <img src="https://i.pinimg.com/736x/28/11/5f/28115fb13d8e2deb2daf26bb80aee530.jpg" alt="Mila Kunis" class="w-full h-full object-cover">
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                             <div class="p-4 text-white">
@@ -866,10 +869,10 @@
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$37M+ raised</span>
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$3.7M+ raised</span>
                             <span class="text-sm font-medium" style="color: var(--primary);">Since 2022</span>
                         </div>
-                        <p class="text-sm mb-4">Born in Ukraine, Mila raised over $37 million for Ukrainian refugees and has been a longtime supporter of children's hospitals in Los Angeles.</p>
+                        <p class="text-sm mb-4">Born in Ukraine, Mila raised over $3.7 million for Ukrainian refugees and has been a longtime supporter of children's hospitals in Los Angeles.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Children</span>
                             <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Health</span>
@@ -881,7 +884,7 @@
                 <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="environment education">
                     <div class="relative">
                         <div class="hex-container">
-                            <img src="/api/placeholder/400/400" alt="Yvon Chouinard" class="w-full h-full object-cover">
+                            <img src="https://i.pinimg.com/736x/d0/24/1f/d0241fe8c4b8040321d4dafcad14a910.jpg" alt="Yvon Chouinard" class="w-full h-full object-cover">
                         </div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
                             <div class="p-4 text-white">
@@ -892,10 +895,10 @@
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$3B+ company donated</span>
+                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$3M+ company donated</span>
                             <span class="text-sm font-medium" style="color: var(--primary);">Since 2022</span>
                         </div>
-                        <p class="text-sm mb-4">In an unprecedented move, Chouinard donated his entire $3 billion company to fight climate change, transferring ownership to trusts that will use all profits for environmental causes.</p>
+                        <p class="text-sm mb-4">In an unprecedented move, Chouinard donated his entire $3 million company to fight climate change, transferring ownership to trusts that will use all profits for environmental causes.</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Environment</span>
                             <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Education</span>
@@ -910,22 +913,22 @@
                 <div class="flex flex-col md:flex-row items-center gap-8">
                     <div class="w-full md:w-1/3">
                         <div class="rounded-full overflow-hidden mx-auto" style="max-width: 250px;">
-                            <img src="/api/placeholder/500/500" alt="Rihanna" class="w-full h-auto">
+                            <img src="https://i.pinimg.com/736x/5c/a4/48/5ca448c758dfa0ac3b76762246447a72.jpg" alt="Rihanna" class="w-full h-auto">
                         </div>
                     </div>
                     <div class="w-full md:w-2/3">
-                        <h2 class="text-3xl font-bold mb-4">Featured Ambassador: Rihanna</h2>
-                        <p class="text-lg mb-6">Through her Clara Lionel Foundation, Rihanna has donated over $80 million to causes including education, emergency response, and healthcare in underserved communities worldwide.</p>
+                        <h2 class="text-3xl text-gray-700 font-bold mb-4">Featured Ambassador: <strong>Rihanna</strong></h2>
+                        <p class="text-lg text-gray-700/80 mb-6">Through her Clara Lionel Foundation, Rihanna has donated over $2 million to causes including education, emergency response, and healthcare in underserved communities worldwide.</p>
                         <div class="flex flex-wrap gap-4">
-                            <div class="bg-white/20 backdrop-blur-md p-4 rounded-lg flex-1">
-                                <div class="text-2xl font-bold">$80M+</div>
+                            <div class="bg-gray-700/80 backdrop-blur-md p-4 rounded-lg flex-1">
+                                <div class="text-2xl font-bold">$19.6M+</div>
                                 <div class="text-sm">Total Donations</div>
                             </div>
-                            <div class="bg-white/20 backdrop-blur-md p-4 rounded-lg flex-1">
-                                <div class="text-2xl font-bold">15+</div>
+                            <div class="bg-gray-700/80  backdrop-blur-md p-4 rounded-lg flex-1">
+                                <div class="text-2xl font-bold">27+</div>
                                 <div class="text-sm">Countries Impacted</div>
                             </div>
-                            <div class="bg-white/20 backdrop-blur-md p-4 rounded-lg flex-1">
+                            <div class="bg-gray-700/80  backdrop-blur-md p-4 rounded-lg flex-1">
                                 <div class="text-2xl font-bold">2012</div>
                                 <div class="text-sm">Foundation Established</div>
                             </div>
@@ -1203,9 +1206,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
             });
         });
-    </script>
 
-AOS.init({
+        AOS.init({
             duration: 1000,
             once: true,
             easing: 'ease-in-out'
@@ -1214,5 +1216,8 @@ AOS.init({
         // Initialize AOS
         AOS.init();
     </script>
+
+
+   
 </body>
 </html>
