@@ -21,13 +21,13 @@
     
     <style>
         :root {
-            --primary: #2A7F62;
-            --secondary: #D9A23D;
-            --accent: #F3F3F3;
-            --primary-light: #67A98F;
-            --secondary-light: #E8C676;
-            --text-light: #FAFAFA;
-            --text-dark: #333333;
+          --primary: #000000;
+          --secondary: #274c3c;
+          --accent: #ffffff;
+          --primary-light: #67a98f;
+          --secondary-light: #e8c676;
+          --text-light: #Ffffff;
+          --text-dark: #333333;
         }
 
         body {
@@ -61,9 +61,7 @@
             object-fit: cover;
         }
 
-        .hero-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232A7F62' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-        }
+       
 
         .brand-font {
             font-family: 'Pacifico', cursive;
@@ -544,7 +542,7 @@
     }
     
     .footer-bottom {
-      background-color: var(--primary-light);
+      
       padding: 20px 0;
       text-align: center;
     }
@@ -690,13 +688,14 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-6 text-[var(--primary)] font-bold">
-                    <a href="index.html" class="nav-link"><i class="fas fa-home mr-2"></i>Home</a>
+                    <a href="index.html" class="nav-link"><i class="fas fa-home mr-2"></i></a>
+                    <a href="employment.html" class="nav-link">Get Paid!</a>
+
                     <a href="story.html" class="nav-link">Our Story</a>
                     <a href="charity.html" class="nav-link">Charity</a>
 
                     <a href="testimonial.html" class="nav-link">Testimonials</a>
                     <a href="projects.html" class="nav-link">Projects</a>
-                    <a href="employment.html" class="nav-link">Get Employed!</a>
                 </div>
 
                 <!-- Mobile Menu Button -->
@@ -715,400 +714,674 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex flex-col gap-3 text-[var(--primary)]">
                 <a href="index.html" class="nav-link p-2" @click="isMenuOpen = false"><i class="fas fa-home mr-2"></i>Home</a>
+                <a href="employment.html" class="nav-link p-2" @click="isMenuOpen = false">Get Paid!</a>
                 <a href="story.html" class="nav-link p-2" @click="isMenuOpen = false">Our Story</a>
                 <a href="charity.html" class="nav-link p-2" @click="isMenuOpen = false">Charity</a>
                 <a href="testimonial.html" class="nav-link p-2" @click="isMenuOpen = false">Testimonials</a>
                 <a href="projects.html" class="nav-link p-2" @click="isMenuOpen = false">Projects</a>
-                <a href="employment.html" class="nav-link p-2" @click="isMenuOpen = false">Get Employed!</a>
             </div>
         </div>
     </div>
 
     <!-- Main Content -->
-    <main class="container hero-pattern  mx-auto my-8 px-4 py-8 min-h-screen">
-        <header class="py-8 px-4 md:px-12 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4" style="color: var(--primary);">Our Team</h1>
-            <p class="text-xl md:text-2xl max-w-3xl mx-auto" style="color: var(--text-dark);">Meet the celebrities who are changing the world through their extraordinary charitable efforts.</p>
-        </header>
-    
-        <div class="filter-nav py-4 top-0 z-10 bg-white/80 backdrop-blur-md shadow-md">
-            <div class="container mx-auto flex flex-wrap justify-center gap-4">
-                <button class="filter-btn px-6 py-2 rounded-full font-medium text-sm md:text-base active" style="background-color: var(--primary); color: var(--text-light);" data-filter="all">All</button>
-                <button class="filter-btn px-6 py-2 rounded-full font-medium text-sm md:text-base" style="background-color: var(--primary-light); color: var(--text-light);" data-filter="children">Children</button>
-                <button class="filter-btn px-6 py-2 rounded-full font-medium text-sm md:text-base" style="background-color: var(--primary-light); color: var(--text-light);" data-filter="education">Education</button>
-                <button class="filter-btn px-6 py-2 rounded-full font-medium text-sm md:text-base" style="background-color: var(--primary-light); color: var(--text-light);" data-filter="environment">Environment</button>
-                <button class="filter-btn px-6 py-2 rounded-full font-medium text-sm md:text-base" style="background-color: var(--primary-light); color: var(--text-light);" data-filter="health">Health</button>
+<main class="container hero-pattern mx-auto my-8 px-4 py-8 min-h-screen">
+    <header class="py-8 px-4 md:px-12 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4" style="color: var(--primary);">Hope Spark Champions</h1>
+        <p class="text-xl md:text-2xl max-w-3xl mx-auto" style="color: var(--text-dark);">Meet the visionary leaders transforming lives through empowerment, financial freedom, and community support.</p>
+        <p class="mt-4 text-lg text-gray-600">A proud partner initiative of <strong>Spark of Hope Foundation</strong></p>
+    </header>
+
+    <div class="filter-nav py-4 top-0 z-10 bg-white/80 backdrop-blur-md shadow-md">
+        <div class="container mx-auto flex flex-wrap justify-center gap-4">
+            <button class="filter-btn px-6 py-2 rounded-full font-medium text-sm md:text-base active" style="background-color: var(--primary); color: var(--text-light);" data-filter="all">All</button>
+            <button class="filter-btn px-6 py-2 rounded-full font-medium text-sm md:text-base" style="background-color: var(--primary-light); color: var(--text-light);" data-filter="empowerment">Empowerment</button>
+            <button class="filter-btn px-6 py-2 rounded-full font-medium text-sm md:text-base" style="background-color: var(--primary-light); color: var(--text-light);" data-filter="finance">Financial Support</button>
+            <button class="filter-btn px-6 py-2 rounded-full font-medium text-sm md:text-base" style="background-color: var(--primary-light); color: var(--text-light);" data-filter="education">Education</button>
+            <button class="filter-btn px-6 py-2 rounded-full font-medium text-sm md:text-base" style="background-color: var(--primary-light); color: var(--text-light);" data-filter="community">Community</button>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-12">
+        <div class="flex flex-wrap justify-center mb-8">
+            <div class="w-full md:w-1/2 lg:w-1/3 p-4 md:p-8 text-center">
+                <div class="text-2xl font-semibold mb-2" style="color: var(--secondary);">Our Vision</div>
+                <p class="text-lg">At Hope Spark Foundation, we ignite change by empowering women, clearing financial burdens, and creating opportunities for single mothers and entrepreneurs to thrive.</p>
             </div>
         </div>
-    
-        <div class="container mx-auto px-4 py-12">
-            <div class="flex flex-wrap justify-center mb-8">
-                <div class="w-full md:w-1/2 lg:w-1/3 p-4 md:p-8 text-center">
-                    <div class="text-2xl font-semibold mb-2" style="color: var(--secondary);">Our Mission</div>
-                    <p class="text-lg">We believe in the power of influence for good. Our team of celebrity ambassadors uses their platform to drive meaningful change in communities around the world.</p>
+
+        <!-- Dynamic Content Container -->
+        <div id="dynamic-content" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+            <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <button id="close-modal" class="absolute top-4 right-4 text-white text-2xl z-50">&times;</button>
+                <div class="p-8">
+                    <div id="content-placeholder"></div>
                 </div>
             </div>
-    
-            <div class="team-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Team member 1 -->
-                <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="children education">
-                    <div class="relative">
-                        <div class="hex-container">
-                            <img src="https://i.pinimg.com/736x/93/5c/e4/935ce40de104cf62dd4d00ded0be7fdb.jpg" alt="Keanu Reeves" class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                            <div class="p-4 text-white">
-                                <h3 class="text-xl font-bold">Keanu Reeves</h3>
-                                <p class="text-sm opacity-75">Children's Hospitals & Cancer Research</p>
-                            </div>
-                        </div>
+        </div>
+
+        <div class="team-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Champion 1 -->
+            <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all hover:scale-105 cursor-pointer"
+                 data-category="empowerment finance"
+                 data-content="champion1">
+                <div class="relative">
+                    <div class="hex-container">
+                        <img src="https://thesparkofhope.org/wp-content/uploads/2024/02/Cora-Di-Pietro-400x453-1.jpg" alt="Cora Di Pietro" class="w-full h-full object-cover">
                     </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$5M+ donated</span>
-                            <span class="text-sm font-medium" style="color: var(--primary);">Since 2012</span>
-                        </div>
-                        <p class="text-sm mb-4">Known for his quiet generosity, Keanu has donated millions to children's hospitals and cancer research, inspired by his sister's battle with leukemia.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Children</span>
-                            <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Education</span>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="p-4 text-white">
+                            <h3 class="text-xl font-bold">Cora Di Pietro</h3>
+                            <p class="text-sm opacity-75">Board Chair</p>
+
                         </div>
                     </div>
                 </div>
-    
-                <!-- Team member 2 -->
-                <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="education health">
-                    <div class="relative">
-                        <div class="hex-container">
-                            <img src="https://i.pinimg.com/736x/9a/94/be/9a94be6eae4e4e1f636f0931f8fb2f3b.jpg" alt="Dolly Parton" class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                            <div class="p-4 text-white">
-                                <h3 class="text-xl font-bold">Dolly Parton</h3>
-                                <p class="text-sm opacity-75">Imagination Library & COVID Research</p>
-                            </div>
-                        </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$300k debt cleared</span>
+                        <span class="text-sm font-medium" style="color: var(--primary);">Since 2015</span>
                     </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 text-[12px] font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">200M+ books & tech gadgets donated</span>
-                            <span class="text-sm font-medium" style="color: var(--primary);">Since 2015</span>
-                        </div>
-                        <p class="text-sm mb-4">Through her Imagination Library, Dolly has donated over 200 million books and tech gadgets to children. She also donated $1M to COVID-19 vaccine research.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Education</span>
-                            <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Health</span>
+                    <p class="text-sm mb-4">Transforming lives by eliminating financial burdens and creating pathways to economic independence for single mothers.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Empowerment</span>
+                        <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Financial</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Champion 2 -->
+            <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all hover:scale-105 cursor-pointer"
+                 data-category="education community"
+                 data-content="champion2">
+                <div class="relative">
+                    <div class="hex-container">
+                        <img src="https://thesparkofhope.org/wp-content/uploads/2025/04/Meera-Sharma-400x453-1.jpg" alt="Meera Sharma" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="p-4 text-white">
+                            <h3 class="text-xl font-bold">Meera Sharma</h3>
+                            <p class="text-sm opacity-75">Board Director</p>
+                            <p class="text-xs opacity-75">Education & Skills Development</p>
                         </div>
                     </div>
                 </div>
-    
-                <!-- Team member 3 -->
-                <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="environment health">
-                    <div class="relative">
-                        <div class="hex-container">
-                            <img src="https://i.pinimg.com/736x/71/eb/55/71eb55705fc1b9a195551e2f9d32e769.jpg" alt="Leonardo DiCaprio" class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                            <div class="p-4 text-white">
-                                <h3 class="text-xl font-bold">Leonardo DiCaprio</h3>
-                                <p class="text-sm opacity-75">Environmental Conservation</p>
-                            </div>
-                        </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">700+ women trained</span>
+                        <span class="text-sm font-medium" style="color: var(--primary);">Since 2015</span>
                     </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$10M+ donated</span>
-                            <span class="text-sm font-medium" style="color: var(--primary);">Since 2013</span>
-                        </div>
-                        <p class="text-sm mb-4">Through his foundation, Leo has awarded over $10M in grants to environmental organizations working to protect wildlife and restore balance to threatened ecosystems.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Environment</span>
-                            <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Health</span>
+                    <p class="text-sm mb-4">Pioneering vocational training programs that equip women with marketable skills for financial independence.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Education</span>
+                        <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Community</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Champion 3 -->
+            <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all hover:scale-105 cursor-pointer"
+                 data-category="empowerment finance"
+                 data-content="champion3">
+                <div class="relative">
+                    <div class="hex-container">
+                        <img src="https://thesparkofhope.org/wp-content/uploads/2024/01/Shairoz_Kherani_final.jpg" alt="Shairoz Kherani" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                        <div class="p-4 text-white">
+                            <h3 class="text-xl font-bold">Shairoz Kherani</h3>
+                            <p class="text-sm opacity-75">Board Director</p>
+
+                            <p class="text-xs opacity-75">Microfinance Pioneer</p>
                         </div>
                     </div>
                 </div>
-    
-                <!-- Team member 4 -->
-                <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="children education">
-                    <div class="relative">
-                        <div class="hex-container">
-                            <img src="https://i.postimg.cc/RCpvFMqW/IMG-20250321-WA0008.jpg"  alt="Chance the Rapper" class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                            <div class="p-4 text-white">
-                                <h3 class="text-xl font-bold">Gavin Kernstine</h3>
-                                <p class="text-sm opacity-75">Nashville Public Schools</p>
-                            </div>
-                        </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$845k in loans</span>
+                        <span class="text-sm font-medium" style="color: var(--primary);">Since 2016</span>
                     </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$420k donated</span>
-                            <span class="text-sm font-medium" style="color: var(--primary);">Since 2017</span>
+                    <p class="text-sm mb-4">Revolutionizing access to capital with innovative microfinance solutions for women entrepreneurs.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Empowerment</span>
+                        <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Financial</span>
+                    </div>
+                </div>
+            </div>
+
+           
+<!-- Team member 4 - Ryan Serhant -->
+<div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all hover:scale-105 cursor-pointer"
+     data-category="finance education"
+     data-content="champion4">
+    <div class="relative">
+        <div class="hex-container">
+            <img src="https://i.pinimg.com/736x/f9/e4/e1/f9e4e1a0fa8a86df35ec56f999370535.jpg" alt="Ryan Serhant" class="w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+            <div class="p-4 text-white">
+                <h3 class="text-xl font-bold">Ryan Serhant</h3>
+                <p class="text-sm opacity-75">Real Estate Philanthropy</p>
+            </div>
+        </div>
+    </div>
+    <div class="p-6">
+        <div class="flex justify-between items-center mb-4">
+            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$846k donated</span>
+            <span class="text-sm font-medium" style="color: var(--primary);">Since 2018</span>
+        </div>
+        <p class="text-sm mb-4">Transforming real estate profits into opportunities for women entrepreneurs through innovative housing and business programs.</p>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Financial</span>
+            <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Education</span>
+        </div>
+    </div>
+</div>
+
+
+            <!-- Champion 5 -->
+            <!-- Team member 5 - Kaley Cuoco -->
+<div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all hover:scale-105 cursor-pointer"
+data-category="empowerment community"
+data-content="champion5">
+<div class="relative">
+   <div class="hex-container">
+       <img src="https://i.postimg.cc/ZqQN8hst/IMG-20250409-WA0103.jpg" alt="Kaley Cuoco" class="w-full h-full object-cover">
+   </div>
+   <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+       <div class="p-4 text-white">
+           <h3 class="text-xl font-bold">Kaley Cuoco</h3>
+           <p class="text-sm opacity-75">Women's Wellness Advocate</p>
+       </div>
+   </div>
+</div>
+<div class="p-6">
+   <div class="flex justify-between items-center mb-4">
+       <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$500k donated</span>
+       <span class="text-sm font-medium" style="color: var(--primary);">Since 2020</span>
+   </div>
+   <p class="text-sm mb-4">Championing mental health and wellness programs for single mothers and women in transition.</p>
+   <div class="flex flex-wrap gap-2">
+       <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Empowerment</span>
+       <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Community</span>
+   </div>
+</div>
+</div>
+
+            <!-- Champion 6 -->
+            <!-- Team member 6 - Blake Shelton -->
+<div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all hover:scale-105 cursor-pointer"
+data-category="community education"
+data-content="champion6">
+<div class="relative">
+   <div class="hex-container">
+       <img src="https://i.pinimg.com/736x/1e/9f/57/1e9f57e40613a35ddd1f44d5376d24c0.jpg" alt="Blake Shelton" class="w-full h-full object-cover">
+   </div>
+   <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+       <div class="p-4 text-white">
+           <h3 class="text-xl font-bold">Blake Shelton</h3>
+           <p class="text-sm opacity-75">Rural Empowerment</p>
+       </div>
+   </div>
+</div>
+<div class="p-6">
+   <div class="flex justify-between items-center mb-4">
+       <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$650k+ invested</span>
+       <span class="text-sm font-medium" style="color: var(--primary);">Since 2021</span>
+   </div>
+   <p class="text-sm mb-4">Revitalizing rural communities through agricultural training and small business development for women.</p>
+   <div class="flex flex-wrap gap-2">
+       <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Community</span>
+       <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Education</span>
+   </div>
+</div>
+</div>
+
+
+        </div>
+    </div>
+
+    <div class="featured-ambassador py-16 bg-gray-200 text-black">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-full md:w-1/3">
+                    <div class="rounded-full overflow-hidden mx-auto" style="max-width: 250px;">
+                        <img src="https://thesparkofhope.org/wp-content/uploads/2024/01/Narmin-Ismail-e1589515681394-400x352.jpg" alt="Featured Champion" class="w-full h-auto">
+                    </div>
+                </div>
+                <div class="w-full md:w-2/3">
+                    <h2 class="text-3xl text-black font-bold mb-4">Our Founder: <strong>Narmin Ismail</strong></h2>
+                    <p class="text-lg text-black/80 mb-6">
+                      Narmin Ismail has always been passionate about empowering youth with the skills, experience and aptitudes to become leaders.
+
+                      In 2014, she decided to tackle the huge funding and accessibility gap at the university level for young women, especially in the Global South in areas of conflict and remote and under-served areas. So she established The Spark of Hope Foundation, and later on <strong><a href="index.html">HopeSpark Foundation</a></strong> to provide university-level scholarships to young women with a mission to help develop the next generation of women leaders.
+                      
+                      Narmin has a B.A. in Psychology from York University and an M.B.A. from Athabasca University, and is the recipient of multiple awards and honours, including the Governor General’s Meritorious Service Medal (M.S.M.).
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-white/20 backdrop-blur-md p-4 rounded-lg flex-1">
+                            <div class="text-2xl font-bold">$1.2M+</div>
+                            <div class="text-sm">Debt Cleared</div>
                         </div>
-                        <p class="text-sm mb-4">Through his actions and social works in Nashville Tennessee. Gavin had donated thousands of MacBooks, thousands to Tennessee public school and focusing on youth empowerment through arts and education.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Children</span>
-                            <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Education</span>
+                        <div class="bg-white/20 backdrop-blur-md p-4 rounded-lg flex-1">
+                            <div class="text-2xl font-bold">1,200+</div>
+                            <div class="text-sm">Women Empowered</div>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-md p-4 rounded-lg flex-1">
+                            <div class="text-2xl font-bold">2014</div>
+                            <div class="text-sm">Founded Hope Spark Foundation</div>
                         </div>
                     </div>
                 </div>
-    
-                <!-- Team member 5 -->
-                <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="health  education">
-                  <div class="relative">
-                      <div class="hex-container">
-                          <img src="https://i.postimg.cc/ZqQN8hst/IMG-20250409-WA0103.jpg" alt="Kaley Cuoco" class="w-full h-full object-cover">
-                      </div>
-                      <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                          <div class="p-4 text-white">
-                              <h3 class="text-xl font-bold">Kaley Cuoco</h3>
-                              <p class="text-sm opacity-75">Philanthropist, Advocate, and Changemaker
-                              </p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="p-6">
-                      <div class="flex justify-between items-center mb-4">
-                          <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$200k donated</span>
-                          <span class="text-sm font-medium" style="color: var(--primary);">Since 2021</span>
-                      </div>
-                      <p class="text-sm mb-4">Kale Cuoco is dedicated to making a positive impact through
-                        her philanthropy. She has helped in providing macbooks and other learning materials to students in need, supports local villages with resources and works tirelessly to improve lives through education and access to esssential services. Kaley is committed to empowering communities and making the world a better place.
-                      </p>
-                      <div class="flex flex-wrap gap-2">
-                          <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Health</span>
-                          <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Education</span>
-                      </div>
-                  </div>
-              </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="quote-section py-16 bg-gray-600 text-white text-center">
+        <div class="container mx-auto px-4">
+            <blockquote class="text-2xl md:text-4xl font-light italic max-w-4xl mx-auto">
+                "When you empower a woman, you empower a family. When you empower enough families, you transform a community."
+                <footer class="mt-4 text-lg font-normal">- Hope Spark Foundation Creed</footer>
+            </blockquote>
+        </div>
+    </div>
+</main>
 
+<!-- Hidden content templates -->
+<div id="content-templates" style="display: none;">
+    <!-- Champion 1 Content -->
+    <div id="champion1-content">
+        <h2 class="text-3xl font-bold mb-6">Meera Sharma: Board Director</h2>
+        <div class="flex flex-col md:flex-row gap-8 mb-8">
+            <div class="md:w-1/3">
+                <img src="https://thesparkofhope.org/wp-content/uploads/2024/02/Cora-Di-Pietro-400x453-1.jpg" alt="Cora Di Pietro" class="w-full rounded-lg">
+            </div>
+            <div class="md:w-2/3">
+                <p class="mb-4">
+                  Cora Di Pietro is Vice President, Global Trade Consulting at Livingston International, pursuing strategic opportunities to grow the business with clients engaged in international trade, helping them minimize risk and achieve higher levels of regulatory compliance. Highly knowledgeable in all areas of valuation, tariff classification, free trade agreements, security regulations, marking rules, export controls and tax, Cora has played a key role in helping large companies around the world expand their business into international markets. Cora has had several success leadership positions since joined Livingston in 1997, including consulting director for Ontario and head of the eastern region in 2004, responsible for both consulting services and business development.
 
+                  Prior to Livingston, Cora held progressively senior positions in the area of commodity tax with two major accounting firms.
+                  
+                  Cora holds a B.A. from York University in Toronto and is an active member of numerous trade and industry associations while also frequently serving as a speaker and lecturer on global trade</p>
+                <ul class="list-disc pl-5 mb-4">
+                    <li>Personalized debt assessment and restructuring</li>
+                    <li>Credit counseling and repair services</li>
+                    <li>Financial literacy workshops</li>
+                    <li>Micro-savings programs</li>
+                    <li>Entrepreneurial seed funding</li>
+                </ul>
+                <p>"Financial freedom isn't just about numbers on a spreadsheet," Cora says. "It's about restoring dignity, creating opportunities, and breaking cycles of poverty that have persisted for generations."</p>
+            </div>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg mb-6">
+            <h3 class="text-xl font-semibold mb-3">Impact Highlights</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="text-2xl font-bold text-primary">250+</div>
+                    <div class="text-sm">Women debt-free</div>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="text-2xl font-bold text-primary">$300k</div>
+                    <div class="text-sm">Debt cleared</div>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="text-2xl font-bold text-primary">87%</div>
+                    <div class="text-sm">Remain debt-free after 3 years</div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold mb-3">Success Story</h3>
+            <blockquote class="border-l-4 border-primary pl-4 italic bg-gray-50 p-4">
+                "Sarah's program didn't just clear my $28,000 debt—it taught me how to build wealth. Today I own a thriving catering business and can provide for my children without fear."
+                <footer class="mt-2 font-normal">- Michelle R., program graduate</footer>
+            </blockquote>
+        </div>
+    </div>
 
+    <!-- Champion 2 Content -->
+    <div id="champion2-content">
+        <h2 class="text-3xl font-bold mb-6">Dr. Amina Diallo: Education Revolution</h2>
+        <div class="flex flex-col md:flex-row gap-8 mb-8">
+            <div class="md:w-1/3">
+                <img src="https://thesparkofhope.org/wp-content/uploads/2025/04/Meera-Sharma-400x453-1.jpg" alt="Meera Sharma" class="w-full rounded-lg">
+            </div>
+            <div class="md:w-2/3">
+                <p class="mb-4">
+                  Meera is the Vice President, Business Process Services at Livingston International, where she is responsible for leading and advancing high-standard customized business outsourcing solutions. Her responsibilities include supplying services to the public and private sector to manage trade programs, contact centers and information and imaging needs.
 
+She previously held leadership roles in Global Project and Portfolio Management and Corporate Development where she was responsible for strategic planning and overall project management for multi-year capital projects. Her experience includes automation opportunities, digital capabilities, regulatory impacts, product expansion, development of service offerings and evaluation of international opportunities. She is an influencer who works across all divisions of Livingston to maximize the company’s return on investments, including a focus on supporting women mentorship programs (formal and informal) and championing diversity and inclusion.
+
+Meera has an MBA from the Richard Ivey School of Business, The University of Western Ontario as well as an HBA in Economics from the University of Toronto.
+                </p>
                 
-    
-                <!-- Team member 6 -->
-                <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="environment education">
-                    <div class="relative">
-                        <div class="hex-container">
-                            <img src="https://i.pinimg.com/736x/d0/24/1f/d0241fe8c4b8040321d4dafcad14a910.jpg" alt="Yvon Chouinard" class="w-full h-full object-cover">
-                        </div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                            <div class="p-4 text-white">
-                                <h3 class="text-xl font-bold">Yvon Chouinard</h3>
-                                <p class="text-sm opacity-75">Patagonia Founder & Environmental Activist</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$3M+ company donated</span>
-                            <span class="text-sm font-medium" style="color: var(--primary);">Since 2022</span>
-                        </div>
-                        <p class="text-sm mb-4">In an unprecedented move, Chouinard donated his entire $3 million company to fight climate change, transferring ownership to trusts that will use all profits for environmental causes.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Environment</span>
-                            <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Education</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Team member 7 -->
-                <div class="card bg-white rounded-lg overflow-hidden shadow-lg transform transition-all" data-category="children health">
-                  <div class="relative">
-                      <div class="hex-container">
-                          <img src="https://i.pinimg.com/736x/28/11/5f/28115fb13d8e2deb2daf26bb80aee530.jpg" alt="Mila Kunis" class="w-full h-full object-cover">
-                      </div>
-                      <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                          <div class="p-4 text-white">
-                              <h3 class="text-xl font-bold">Mila Kunis</h3>
-                              <p class="text-sm opacity-75">Ukraine Relief & Children's Hospitals</p>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="p-6">
-                      <div class="flex justify-between items-center mb-4">
-                          <span class="px-3 py-1 text-xs font-semibold rounded-full" style="background-color: var(--secondary-light); color: var(--text-dark);">$3.7M+ raised</span>
-                          <span class="text-sm font-medium" style="color: var(--primary);">Since 2022</span>
-                      </div>
-                      <p class="text-sm mb-4">Born in Ukraine, Mila raised over $3.7 million for Ukrainian refugees and has been a longtime supporter of children's hospitals in Los Angeles.</p>
-                      <div class="flex flex-wrap gap-2">
-                          <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Children</span>
-                          <span class="px-2 py-1 text-xs rounded" style="background-color: var(--primary-light); color: var(--text-light);">Health</span>
-                      </div>
-                  </div>
-              </div>
-             
+                
+                <p class="mb-4">The program focuses on:</p>
+                <ul class="list-disc pl-5 mb-4">
+                    <li>Tech skills (coding, digital marketing, data analysis)</li>
+                    <li>Green economy jobs (solar installation, sustainable agriculture)</li>
+                    <li>Healthcare support roles</li>
+                    <li>Entrepreneurial training</li>
+                    <li>Soft skills development</li>
+                </ul>
+                <p>"Education is the great equalizer," Meera explains. "But traditional systems often fail women. We meet them where they are with practical, immediately applicable skills that transform their earning potential."</p>
             </div>
         </div>
-    
-        <div class="featured-ambassador py-16 bg-gradient-to-r from-primary to-primary-light text-white">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="w-full md:w-1/3">
-                        <div class="rounded-full overflow-hidden mx-auto" style="max-width: 250px;">
-                            <img src="https://i.pinimg.com/736x/5c/a4/48/5ca448c758dfa0ac3b76762246447a72.jpg" alt="Rihanna" class="w-full h-auto">
-                        </div>
-                    </div>
-                    <div class="w-full md:w-2/3">
-                        <h2 class="text-3xl text-gray-700 font-bold mb-4">Featured Ambassador: <strong>Rihanna</strong></h2>
-                        <p class="text-lg text-gray-700/80 mb-6">Through her Clara Lionel Foundation, Rihanna has donated over $2 million to causes including education, emergency response, and healthcare in underserved communities worldwide.</p>
-                        <div class="flex flex-wrap gap-4">
-                            <div class="bg-gray-700/80 backdrop-blur-md p-4 rounded-lg flex-1">
-                                <div class="text-2xl font-bold">$19.6M+</div>
-                                <div class="text-sm">Total Donations</div>
-                            </div>
-                            <div class="bg-gray-700/80  backdrop-blur-md p-4 rounded-lg flex-1">
-                                <div class="text-2xl font-bold">27+</div>
-                                <div class="text-sm">Countries Impacted</div>
-                            </div>
-                            <div class="bg-gray-700/80  backdrop-blur-md p-4 rounded-lg flex-1">
-                                <div class="text-2xl font-bold">2012</div>
-                                <div class="text-sm">Foundation Established</div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="bg-gray-100 p-6 rounded-lg mb-6">
+            <h3 class="text-xl font-semibold mb-3">Program Outcomes</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="text-2xl font-bold text-primary">82%</div>
+                    <div class="text-sm">Employment rate within 6 months</div>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="text-2xl font-bold text-primary">3.5x</div>
+                    <div class="text-sm">Average income increase</div>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="text-2xl font-bold text-primary">17</div>
+                    <div class="text-sm">States implementing her model</div>
                 </div>
             </div>
         </div>
-    
-        <div class="quote-section py-16 bg-secondary text-white text-center">
-            <div class="container mx-auto px-4">
-                <blockquote class="text-2xl md:text-4xl font-light italic max-w-4xl mx-auto">
-                    "We make a living by what we get. We make a life by what we give."
-                    <footer class="mt-4 text-lg font-normal">- Winston Churchill</footer>
-                </blockquote>
+    </div>
+
+    <!-- Champion 3 Content -->
+    <div id="champion3-content">
+        <h2 class="text-3xl font-bold mb-6">Maria Gonzalez: Microfinance Visionary</h2>
+        <div class="flex flex-col md:flex-row gap-8 mb-8">
+            <div class="md:w-1/3">
+                <img src="https://thesparkofhope.org/wp-content/uploads/2024/01/Shairoz_Kherani_final.jpg" alt="Shairoz Kherani" class="w-full rounded-lg">
+            </div>
+            <div class="md:w-2/3">
+                <p class="mb-4">
+                  Shairoz comes with a 25 year progressive career in a variety of leadership roles across teaching/academic and community hospitals in both an adult and pediatric settings at St. Michael’s Hospital, Cancer Care Ontario, Hamilton Health Sciences and currently as Director, Diagnostic Imaging and Laboratory Medicine at Halton Healthcare.
+
+                  Having completed her Master’s in Healthcare Quality in 2016, Shairoz has embraced the opportunity to drive quality improvement and best practice across her program areas, and beyond. With a leadership track record, Shairoz has built strategic partnerships within and external to the organizations where she has worked. Shairoz also comes with a strong business and financial acumen. She holds a Masters degree in Business Administration (MBA) and a CPA designation. This has helped the hospital manage budgets effectively, develop sound business cases and create value for money. She has held board positions as Chair of the Governance committee and previous to this as Chair of the Finance committee at the Bob Hemp Hospice in Hamilton. She has also contributed as a member on the Ontario Association of Medical Radiation Sciences board whose mission is to provide advocacy, support and service for Technologists in Radiation Sciences and Ultrasound.
+                </p>
+                
+                <p class="mb-4">Her innovative approach includes:</p>
+                <ul class="list-disc pl-5 mb-4">
+                    <li>Group lending circles that build accountability</li>
+                    <li>Collateral-free loans based on character</li>
+                    <li>Business mentoring alongside financing</li>
+                    <li>Graduated loan sizes as businesses grow</li>
+                    <li>Profit-sharing models for lenders</li>
+                </ul>
+                <p>"Capital should be a tool for liberation, not another chain," Shairoz says. "We've proven that when you trust women with resources and support, they transform not just their own lives but entire communities."</p>
             </div>
         </div>
-    
+        <div class="bg-gray-100 p-6 rounded-lg mb-6">
+            <h3 class="text-xl font-semibold mb-3">Economic Impact</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="text-2xl font-bold text-primary">840+</div>
+                    <div class="text-sm">Businesses launched</div>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="text-2xl font-bold text-primary">98%</div>
+                    <div class="text-sm">Repayment rate</div>
+                </div>
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="text-2xl font-bold text-primary">1:7</div>
+                    <div class="text-sm">Jobs created per loan</div>
+                </div>
+            </div>
+        </div>
 
-    </main>
+
+
+        <!-- Ryan Serhant Content Template -->
+<div id="champion4-content">
+  <h2 class="text-3xl font-bold mb-6">Ryan Serhant: Building Dreams Beyond Real Estate</h2>
+  <div class="flex flex-col md:flex-row gap-8 mb-8">
+      <div class="md:w-1/3">
+          <img src="https://i.pinimg.com/736x/f9/e4/e1/f9e4e1a0fa8a86df35ec56f999370535.jpg" alt="Ryan Serhant" class="w-full rounded-lg">
+      </div>
+      <div class="md:w-2/3">
+          <p class="mb-4">Ryan Serhant, renowned real estate mogul and star of "Million Dollar Listing New York," joined Hope Spark Foundation in 2018 with a mission to transform his industry success into opportunities for women entrepreneurs.</p>
+          <p class="mb-4">His "Home to Own" initiative provides:</p>
+          <ul class="list-disc pl-5 mb-4">
+              <li>Down payment assistance for single mothers</li>
+              <li>Real estate investment training for women</li>
+              <li>Commercial property leases for women-owned businesses</li>
+              <li>Financial literacy programs through his Serhant Team</li>
+              <li>Scholarships for women in real estate programs</li>
+          </ul>
+          <p>"Real wealth isn't just about property values," Ryan says. "It's about creating lasting value in people's lives. Every woman should have the tools to build both her home and her dreams."</p>
+      </div>
+  </div>
+  <div class="bg-gray-100 p-6 rounded-lg mb-6">
+      <h3 class="text-xl font-semibold mb-3">Impact Through Real Estate</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-white p-4 rounded shadow">
+              <div class="text-2xl font-bold text-primary">$1.5M</div>
+              <div class="text-sm">In housing assistance</div>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+              <div class="text-2xl font-bold text-primary">120+</div>
+              <div class="text-sm">Women homeowners created</div>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+              <div class="text-2xl font-bold text-primary">45</div>
+              <div class="text-sm">Women-trained real estate agents</div>
+          </div>
+      </div>
+  </div>
+  <div class="mb-6">
+      <h3 class="text-xl font-semibold mb-3">Success Story</h3>
+      <blockquote class="border-l-4 border-primary pl-4 italic bg-gray-50 p-4">
+          "Ryan's program helped me buy my first home while growing my catering business. The commercial kitchen space his foundation secured for me changed everything."
+          <footer class="mt-2 font-normal">- Danielle T., single mother and business owner</footer>
+      </blockquote>
+  </div>
+</div>
+
+<!-- Kaley Cuoco Content Template -->
+<div id="champion5-content">
+  <h2 class="text-3xl font-bold mb-6">Kaley Cuoco: Healing Hearts, Empowering Lives</h2>
+  <div class="flex flex-col md:flex-row gap-8 mb-8">
+      <div class="md:w-1/3">
+          <img src="https://i.postimg.cc/ZqQN8hst/IMG-20250409-WA0103.jpg" alt="Kaley Cuoco" class="w-full rounded-lg">
+      </div>
+      <div class="md:w-2/3">
+          <p class="mb-4">Kaley Cuoco brought her passion for mental health advocacy to Hope Spark Foundation in 2020, establishing the "Whole Woman Initiative" that addresses the emotional and psychological needs of women rebuilding their lives.</p>
+          <p class="mb-4">Her comprehensive program offers:</p>
+          <ul class="list-disc pl-5 mb-4">
+              <li>Free therapy sessions for single mothers</li>
+              <li>Wellness retreats for women in transition</li>
+              <li>Childcare-accessible support groups</li>
+              <li>Art and equine therapy programs</li>
+              <li>Crisis intervention funding</li>
+          </ul>
+          <p>"Healing isn't a luxury—it's the foundation for everything else," Kaley explains. "When we care for a woman's mental health, we empower her to care for her family, her career, and her future."</p>
+      </div>
+  </div>
+  <div class="bg-gray-100 p-6 rounded-lg mb-6">
+      <h3 class="text-xl font-semibold mb-3">Wellness Impact</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-white p-4 rounded shadow">
+              <div class="text-2xl font-bold text-primary">320+</div>
+              <div class="text-sm">Therapy sessions provided</div>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+              <div class="text-2xl font-bold text-primary">87%</div>
+              <div class="text-sm">Report improved mental health</div>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+              <div class="text-2xl font-bold text-primary">24</div>
+              <div class="text-sm">Wellness retreats hosted</div>
+          </div>
+      </div>
+  </div>
+  <div class="mb-6">
+      <h3 class="text-xl font-semibold mb-3">Participant Story</h3>
+      <blockquote class="border-l-4 border-primary pl-4 italic bg-gray-50 p-4">
+          "After my divorce, Kaley's program gave me back my confidence. The therapy and retreat showed me I wasn't alone. Today I run a support group for other women."
+          <footer class="mt-2 font-normal">- Jessica L., program participant</footer>
+      </blockquote>
+  </div>
+</div>
+
+
+<!-- Blake Shelton Content Template -->
+<div id="champion6-content">
+  <h2 class="text-3xl font-bold mb-6">Blake Shelton: Growing Hope in Rural America</h2>
+  <div class="flex flex-col md:flex-row gap-8 mb-8">
+      <div class="md:w-1/3">
+          <img src="https://i.pinimg.com/736x/53/25/d9/5325d95de550f9c192390dbdb8e5b1ea.jpg" alt="Blake Shelton" class="w-full rounded-lg">
+      </div>
+      <div class="md:w-2/3">
+          <p class="mb-4">Country music superstar Blake Shelton partnered with Hope Spark Foundation in 2021 to address the unique challenges facing women in rural communities through his "Homegrown Hope" initiative.</p>
+          <p class="mb-4">The program focuses on:</p>
+          <ul class="list-disc pl-5 mb-4">
+              <li>Agricultural training and land access</li>
+              <li>Farm-to-business incubators</li>
+              <li>Rural childcare solutions</li>
+              <li>Distance learning technology</li>
+              <li>Small town revitalization projects</li>
+          </ul>
+          <p>"Small towns are the heart of America, and the women who hold them together deserve every opportunity," Blake says. "We're proving that with the right support, rural communities can thrive again."</p>
+      </div>
+  </div>
+  <div class="bg-gray-100 p-6 rounded-lg mb-6">
+      <h3 class="text-xl font-semibold mb-3">Rural Revival</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-white p-4 rounded shadow">
+              <div class="text-2xl font-bold text-primary">42</div>
+              <div class="text-sm">Communities impacted</div>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+              <div class="text-2xl font-bold text-primary">$650k+</div>
+              <div class="text-sm">Invested in rural businesses</div>
+          </div>
+          <div class="bg-white p-4 rounded shadow">
+              <div class="text-2xl font-bold text-primary">80+</div>
+              <div class="text-sm">Women-owned farms created</div>
+          </div>
+      </div>
+  </div>
+  <div class="mb-6">
+      <h3 class="text-xl font-semibold mb-3">Success Story</h3>
+      <blockquote class="border-l-4 border-primary pl-4 italic bg-gray-50 p-4">
+          "Blake's program gave me the training and startup funds to turn my family's land into a thriving organic farm. Now I employ three other single moms from our town."
+          <footer class="mt-2 font-normal">- Sarah Beth W., Oklahoma farmer</footer>
+      </blockquote>
+  </div>
+</div>
+
+    </div>
+</div>
+
+
+    
 <br><br>
 
  <!-- Footer Section -->
  <footer class="footer-container">
-    <div class="footer-wave">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-      </svg>
-    </div>
+  <div class="footer-wave">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+    </svg>
+  </div>
 
-    <div class="footer-content">
-      <!-- Logo & Description Section -->
-      <div class="footer-logo-section ml-2">
-        <div class="footer-logo">HopeSpark Foundation</div>
-        <p class="footer-tagline">Illuminating paths to a brighter future, empowering communities through compassion, innovation, and sustainable change.</p>
-        <div class="social-icons">
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-        </div>
+  <div class="footer-content">
+    <!-- Logo & Description Section -->
+    <div class="footer-logo-section ml-2">
+      <div class="footer-logo">HopeSpark Foundation</div>
+      <p class="footer-tagline">Illuminating paths to a brighter future, empowering women  through education, empowerment,  innovation, and sustainable change.</p>
+      <div class="social-icons">
+        <a target="_blank" href="https://www.facebook.com/sparkofhopefdn" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a target="_blank" href="https://www.instagram.com/sparkofhopefdn" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a target="_blank" href="https://www.youtube.com/channel/UCYbVXBR-7HomQKvCP8KkTKw" class="social-icon"><i class="fab fa-youtube"></i></a>
       </div>
+    </div>
 <br>
-      <!-- Quick Links Section -->
-      <div class="footer-links-section">
-        <h3 class="footer-heading">Quick Links</h3>
-        <ul class="footer-links">
-          <li class="footer-link"><a href="story.html">About Us</a></li>
-          <li class="footer-link"><a href="projects.html">Our Projects</a></li>
-          <li class="footer-link"><a href="employment.html">Get Involved</a></li>
-          <li class="footer-link"><a href="customer-support.html">Donate Now</a></li>
-          <li class="footer-link"><a href="testimonial.html">News & Events</a></li>
-          <li class="footer-link"><a href="customer-support.html">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <!-- Programs Section -->
-      <div class="footer-links-section">
-        <h3 class="footer-heading">Our Programs</h3>
-        <ul class="footer-links">
-          <li class="footer-link"><a href="#">Education Fund</a></li>
-          <li class="footer-link"><a href="#">Clean Water Initiative</a></li>
-          <li class="footer-link"><a href="#">Healthcare Access</a></li>
-          <li class="footer-link"><a href="#">Youth Empowerment</a></li>
-          <li class="footer-link"><a href="#">Disaster Relief</a></li>
-          <li class="footer-link"><a href="#">Community Building</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact & Newsletter Section -->
-      <div class="footer-contact-section">
-        <h3 class="footer-heading">Get In Touch</h3>
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div>1234 Hope Street, Charity Lane<br>New York, NY 10001</div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-            <div>+1 (555) 123-4567</div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <a href="mailto:contact.hopespark@gamil.com"><div>info@hopesparkfoundation.org</div></a>
-          </div>
-        </div>
-
-        <h3 class="footer-heading">Newsletter</h3>
-        <div class="newsletter-form">
-            <form id="contact-form">
-          <div class="form-group">
-            <input name="newsletter-form" type="email" class="newsletter-input" placeholder="Your email address">
-            <button type="submit" class="submit-btn">Subscribe</button>
-          </div>
-          <p class="newsletter-disclaimer">Subscribe to get updates on our projects and impact stories.</p>
-          <div id="form-message" class="text-center text-white mt-4"></div> <!-- Success/Error Message Container -->
-
-        </form>
-        </div>
-        
-        <div class="trust-badges">
-          <div class="trust-badge">
-            <i class="fas fa-shield-alt"></i>
-            <span>501(c)(3) Certified</span>
-          </div>
-          <div class="trust-badge">
-            <i class="fas fa-check-circle"></i>
-            <span>Transparency Pledge</span>
-          </div>
-          <div class="trust-badge">
-            <i class="fas fa-award"></i>
-            <span>Top-Rated Charity</span>
-          </div>
-        </div>
-      </div>
+    <!-- Quick Links Section -->
+    <div class="footer-links-section">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li class="footer-link"><a href="story.html">About Us</a></li>
+        <li class="footer-link"><a href="projects.html">Our Projects</a></li>
+        <li class="footer-link"><a href="employment.html">Get Paid!</a></li>
+        <li class="footer-link"><a href="https://thesparkofhope.org">Our Parent Company</a></li>
+        <li class="footer-link"><a href="testimonial.html">News & Events</a></li>
+        <li class="footer-link"><a href="customer-support.html">Contact Us</a></li>
+      </ul>
     </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <div class="footer-bottom-content">
-        <div class="copyright">
-          &copy; 2025 HopeSpark Foundation. All rights reserved. Made with <i class="fas fa-heart heart-icon"></i> for a better world.
+    <!-- Programs Section -->
+    <div class="footer-links-section">
+      <h3 class="footer-heading">Our Programs</h3>
+      <ul class="footer-links">
+        <li class="footer-link"><a href="grant.html">Grants for single women</a></li>
+        <li class="footer-link"><a href="grant.html">Scholarships</a></li>
+        <li class="footer-link"><a href="grant.html">Business Startup</a></li>
+        <li class="footer-link"><a href="employment.html">Women Empowerment</a></li>
+        <li class="footer-link"><a href="grant.html">Career Expansion</a></li>
+        <li class="footer-link"><a href="grant.html">Dept Payment</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact & Newsletter Section -->
+    <div class="footer-contact-section">
+      <h3 class="footer-heading">Get In Touch</h3>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>241  Minetta Lane, Apt 4B<br>New York, NY 10012</div>
         </div>
-        <div class="footer-bottom-links">
-          <a href=" https://www.termsfeed.com/live/5ef78e38-8cea-4cee-86d0-0ccd13afc3fa"  target="_blank" rel="noopener" class="footer-bottom-link">Privacy Policy</a>
-          <a href=" https://www.termsfeed.com/live/5ef78e38-8cea-4cee-86d0-0ccd13afc3fa"  target="_blank" rel="noopener" class="footer-bottom-link">Terms of Service</a>
-          <a href=" https://www.termsfeed.com/live/5ef78e38-8cea-4cee-86d0-0ccd13afc3fa"  target="_blank" rel="noopener" class="footer-bottom-link">Cookie Policy</a>
-          <a href=" https://www.termsfeed.com/live/5ef78e38-8cea-4cee-86d0-0ccd13afc3fa"  target="_blank" rel="noopener" class="footer-bottom-link">Sitemap</a>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <div><a target="_blank" href="tel:+1 (555) 123-4567">+1 (808) 301-9134</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <a href="mailto:hopesparkfoundation@outlook.com" target="_blank"><div>hopesparkfoundation@outlook.com</div></a>
         </div>
       </div>
+
+      <h3 class="footer-heading">Newsletter</h3>
+      <div class="newsletter-form">
+          <form id="contact-form">
+        <div class="form-group">
+          <input name="newsletter-form" type="email" class="newsletter-input" placeholder="Your email address">
+          <button type="submit" class="submit-btn">Subscribe</button>
+        </div>
+        <p class="newsletter-disclaimer">Subscribe to get updates on our projects and impact stories.</p>
+        <div id="form-message" class="text-center text-white mt-4"></div> <!-- Success/Error Message Container -->
+
+      </form>
+      </div>
+
+     
     </div>
-  </footer>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <div class="copyright">
+        &copy; 2025 HopeSpark Foundation. A subsidiary of  <a href="https://thesparkofhope.org">The Spark of Hope Foundation</a>
+      </div>
+      <div class="footer-bottom-links">
+        <a href=" https://thesparkofhope.org/terms-and-privacy/"  target="_blank" rel="noopener" class="footer-bottom-link">Privacy Policy</a>
+        <a href=" https://thesparkofhope.org/terms-and-privacy/"  target="_blank" rel="noopener" class="footer-bottom-link">Terms of Service</a>
+        <a href=" https://thesparkofhope.org/terms-and-privacy/"  target="_blank" rel="noopener" class="footer-bottom-link">Cookie Policy</a>
+        <a href=" https://thesparkofhope.org/terms-and-privacy/"  target="_blank" rel="noopener" class="footer-bottom-link">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
 
   <!-- Back to Top Button -->
-  <div class="back-to-top">
+  <div style="color:white;" class="back-to-top">
     <i class="fas fa-arrow-up"></i>
   </div>
 
 
 <div class="chat-container">
     <button class="chat-button" aria-label="Open chat">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
         </svg>
     </button>
@@ -1233,6 +1506,69 @@ document.addEventListener('DOMContentLoaded', function() {
                 observer.observe(card);
             });
         });
+
+// Dynamic content display functionality
+document.addEventListener('DOMContentLoaded', function() {
+        const cards = document.querySelectorAll('.card');
+        const dynamicContent = document.getElementById('dynamic-content');
+        const contentPlaceholder = document.getElementById('content-placeholder');
+        const closeModal = document.getElementById('close-modal');
+        const contentTemplates = document.getElementById('content-templates');
+
+        // Show dynamic content when card is clicked
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const contentId = this.getAttribute('data-content') + '-content';
+                const content = document.getElementById(contentId) || contentTemplates.querySelector('#' + contentId);
+               
+                if (content) {
+                    contentPlaceholder.innerHTML = content.innerHTML;
+                    dynamicContent.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', function() {
+            dynamicContent.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close when clicking outside content
+        dynamicContent.addEventListener('click', function(e) {
+            if (e.target === dynamicContent) {
+                dynamicContent.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+               
+                const filterValue = this.getAttribute('data-filter');
+                const cards = document.querySelectorAll('.card');
+               
+                cards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const categories = card.getAttribute('data-category').split(' ');
+                        if (categories.includes(filterValue)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    });
 
         // Ensure images load with placeholder content
         document.addEventListener('DOMContentLoaded', function() {

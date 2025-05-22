@@ -91,11 +91,11 @@
             theme: {
                 extend: {
                   colors: {
-                      primary: '#2a7f62',
+                      primary: '#000000',
                       'primary-light': '#67a98f',
-                      secondary: '#d9a23d',
+                      secondary: '#274c3c',
                       'secondary-light': '#e8c676',
-                      accent: '#f3f3f3',
+                      accent: '#ffffff',
                       'text-light': '#Ffffff',
                       'text-dark': '#333333',
                   },
@@ -122,9 +122,9 @@
     </script>
     <style>
         :root {
-      --primary: #2a7f62;
-      --secondary: #d9a23d;
-      --accent: #f3f3f3;
+          --primary: #000000;
+      --secondary: #274c3c;
+      --accent: #ffffff;
       --primary-light: #67a98f;
       --secondary-light: #e8c676;
       --text-light: #Ffffff;
@@ -574,7 +574,7 @@
     }
     
     .footer-bottom {
-      background-color: var(--primary-light);
+    
       padding: 20px 0;
       text-align: center;
     }
@@ -691,9 +691,7 @@
     .brand-name{
       font-family:Arial, Helvetica, sans-serif;
     }
-    .hero-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232A7F62' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-        }
+    
  </style>
 </head>
 
@@ -721,7 +719,7 @@
 
           <!-- Desktop Menu -->
           <div class="hidden md:flex items-center gap-6 text-[var(--primary)] font-bold">
-              <a href="index.html" class="nav-link"><i class="fas fa-home mr-2"></i>Home</a>
+              <a href="index.html" class="nav-link"><i class="fas fa-home mr-2"></i></a>
               <a href="charity.html" class="nav-link">Charity</a>
               <a href="story.html" class="nav-link">Our Story</a>
               <a href="testimonial.html" class="nav-link">Testimonials</a>
@@ -756,248 +754,174 @@
 
 
     <!-- Main Content -->
-    <main class="hero-pattern min-h-screen">
+    <main class="min-h-screen bg-white">
       <div class="container max-w-6xl mx-auto px-4 py-8 md:py-16">
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
-            <!-- Left Column - Mission Statement -->
-            <div class="w-full lg:w-2/5 space-y-8 opacity-0 form-section animate-form-section">
-                <div class="space-y-4">
-                    <h1 class="text-4xl md:text-5xl font-bold text-primary leading-tight tracking-tight">
-                        Get Paid To <span class="gradient-text">Change Lives</span>
-                    </h1>
-                    <p class="text-xl font-light text-primary-light leading-relaxed">
-                        Your expertise deserves recognition—both in impact and compensation.
-                    </p>
-                </div>
-                
-                <div class="space-y-6 mt-8">
-                    <p class="text-text-dark leading-relaxed">
-                        You've spent years refining your talents, yet traditional career paths rarely offer both meaning and rewards. Here, we're transforming how professionals approach philanthropy.
-                    </p>
-                    
-                    <div class="flex items-center gap-4 mt-6">
-                        <div class="h-px bg-secondary flex-grow"></div>
-                        <span class="text-secondary font-medium">Our Promise</span>
-                        <div class="h-px bg-secondary flex-grow"></div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="flex gap-3">
-                            <div class="w-6 h-6 rounded-full bg-secondary-light flex-shrink-0 flex items-center justify-center text-accent">✓</div>
-                            <p class="text-text-dark">Competitive compensation reflecting your true market value</p>
-                        </div>
-                        <div class="flex gap-3">
-                            <div class="w-6 h-6 rounded-full bg-secondary-light flex-shrink-0 flex items-center justify-center text-accent">✓</div>
-                            <p class="text-text-dark">Exponential professional growth through mission-critical challenges</p>
-                        </div>
-                        <div class="flex gap-3">
-                            <div class="w-6 h-6 rounded-full bg-secondary-light flex-shrink-0 flex items-center justify-center text-accent">✓</div>
-                            <p class="text-text-dark">Work that transforms lives while advancing your career</p>
-                        </div>
-                    </div>
-                    
-                    <p class="text-primary-light italic border-l-2 border-secondary pl-4 mt-6">
-                        "We believe exceptional talent deserves exceptional recognition—financially and purposefully."
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Right Column - Application Form -->
-            <div class="w-full lg:w-3/5 bg-white rounded-xl shadow-xl p-6 md:p-10 opacity-0 form-section animate-form-section animate-delay-100">
-                <h2 class="text-2xl font-bold text-primary mb-8">Get Employed Today!</h2>
-                
-                <form id="application-form" class="space-y-8">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="relative">
-                            <input type="text" id="firstName" name="firstName" class="form-input w-full p-3 border border-gray-300 rounded-lg focus:outline-none placeholder-transparent" placeholder=" " required>
-                            <label for="firstName" class="floating-label">First Name</label>
-                        </div>
-                        
-                        <div class="relative">
-                            <input type="text" id="lastName" name="lastName" class="form-input w-full p-3 border border-gray-300 rounded-lg focus:outline-none placeholder-transparent" placeholder=" " required>
-                            <label for="lastName" class="floating-label">Last Name</label>
-                        </div>
-                    </div>
-                    
-                    <div class="relative">
-                        <input type="email" id="email" name="email" class="form-input w-full p-3 border border-gray-300 rounded-lg focus:outline-none placeholder-transparent" placeholder=" " required>
-                        <label for="email" class="floating-label">Email Address</label>
-                    </div>
-                    
-                    <div class="relative">
-                        <input type="tel" id="phone" name="phone" class="form-input w-full p-3 border border-gray-300 rounded-lg focus:outline-none" required>
-                    </div>
-                    
-                    <div class="relative">
-                        <textarea id="whyHire" name="whyHire" rows="4" class="form-input w-full p-3 border border-gray-300 rounded-lg focus:outline-none placeholder-transparent resize-none" placeholder=" " required></textarea>
-                        <label for="whyHire" class="floating-label">Why Should We Hire You?</label>
-                    </div>
-                    
-                    <div class="space-y-3">
-                        <label class="block text-primary font-medium">Upload Resume</label>
-                        <div class="relative border-2 border-dashed border-gray-300 rounded-lg p-6 transition-all hover:border-primary">
-                            <input type="file" id="resume" name="resume" accept=".pdf,.docx" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" required>
-                            <div class="text-center">
-                                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48">
-                                    <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H8m36-12h-4m-12-8v8m0 0v8m0-8h12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                                <p id="file-name" class="mt-2 text-sm text-gray-500">PDF or DOCX up to 5MB</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="pt-4">
-                        <button type="submit" class="w-full bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:translate-y-[-2px] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
-                            Submit Application
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+          <div class="flex flex-col lg:flex-row gap-8 lg:gap-16">
+              <!-- Left Column - Mission Statement -->
+              <div class="w-full lg:w-2/5 space-y-8 opacity-0 form-section animate-form-section">
+                  <div class="space-y-4">
+                      <div class="flex items-center gap-2 mb-4">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                          </svg>
+                          <span class="text-sm font-medium text-gray-500">HOPESPARK FOUNDATION</span>
+                      </div>
+                      <h1 class="text-4xl md:text-5xl font-bold text-black leading-tight tracking-tight">
+                          Inspire Lives, <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-800 to-gray-600">Gain More Than You Give</span>
+                      </h1>
+                      <p class="text-xl font-light text-gray-600 leading-relaxed">
+                          Transform lives while building your own future through meaningful work.
+                      </p>
+                  </div>
+                 
+                  <div class="space-y-6 mt-8">
+                      <p class="text-gray-700 leading-relaxed">
+                          At HopeSpark Foundation, an affiliate of Spark of Hope Foundation, we bridge the gap between your skills and global impact. Whether it's women empowerment, debt relief, business incubation, or career advancement - your expertise creates ripples of change.
+                      </p>
+                     
+                      <div class="flex items-center gap-4 mt-6">
+                          <div class="h-px bg-black flex-grow"></div>
+                          <span class="text-black font-medium">Our Commitment</span>
+                          <div class="h-px bg-black flex-grow"></div>
+                      </div>
+                     
+                      <div class="space-y-4">
+                          <div class="flex gap-3">
+                              <div class="w-6 h-6 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-black">✓</div>
+                              <p class="text-gray-700">Competitive compensation with purpose-driven bonuses</p>
+                          </div>
+                          <div class="flex gap-3">
+                              <div class="w-6 h-6 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-black">✓</div>
+                              <p class="text-gray-700">Global network of change-makers and industry leaders</p>
+                          </div>
+                          <div class="flex gap-3">
+                              <div class="w-6 h-6 rounded-full bg-gray-100 flex-shrink-0 flex items-center justify-center text-black">✓</div>
+                              <p class="text-gray-700">Resources to launch your own initiatives with our support</p>
+                          </div>
+                      </div>
+                     
+                      <p class="text-gray-600 italic border-l-2 border-black pl-4 mt-6">
+                          "We measure success not just in profits, but in lives elevated and potentials unlocked."
+                      </p>
+                  </div>
+              </div>
+             
+              <!-- Right Column - Application Form -->
+              <div class="w-full lg:w-3/5 bg-gray-900 rounded-xl shadow-2xl p-6 md:p-10 opacity-0 form-section animate-form-section animate-delay-100">
+                  
+                  
+                     
+              
+                https://tally.so/embed/mYyXgv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1
+              </div>
+          </div>
+      </div>
+  </main>
     
-    <!-- Success Modal -->
-    <div id="success-modal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
-        <div class="modal-backdrop absolute inset-0"></div>
-        <div id="modal-content" class="bg-white rounded-xl p-8 shadow-2xl max-w-md w-full mx-4 relative z-10 opacity-0 transform translate-y-8 transition-all duration-300">
-            <div class="text-center">
-                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold text-primary mb-2">Application Submitted</h3>
-                <p class="text-gray-600 mb-6">Your application has been successfully submitted. We'll review your application and be in touch soon.</p>
-                <button id="close-modal" class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-light transition-colors duration-300">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-    
-
-
-    </main>
-
+  
  <!-- Footer Section -->
  <footer class="footer-container">
-    <div class="footer-wave">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
-      </svg>
-    </div>
+  <div class="footer-wave">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+    </svg>
+  </div>
 
-    <div class="footer-content">
-      <!-- Logo & Description Section -->
-      <div class="footer-logo-section ml-2">
-        <div class="footer-logo">HopeSpark Foundation</div>
-        <p class="footer-tagline">Illuminating paths to a brighter future, empowering communities through compassion, innovation, and sustainable change.</p>
-        <div class="social-icons">
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-        </div>
+  <div class="footer-content">
+    <!-- Logo & Description Section -->
+    <div class="footer-logo-section ml-2">
+      <div class="footer-logo">HopeSpark Foundation</div>
+      <p class="footer-tagline">Illuminating paths to a brighter future, empowering women  through education, empowerment,  innovation, and sustainable change.</p>
+      <div class="social-icons">
+        <a target="_blank" href="https://www.facebook.com/sparkofhopefdn" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a target="_blank" href="https://www.instagram.com/sparkofhopefdn" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a target="_blank" href="https://www.youtube.com/channel/UCYbVXBR-7HomQKvCP8KkTKw" class="social-icon"><i class="fab fa-youtube"></i></a>
       </div>
+    </div>
 <br>
-      <!-- Quick Links Section -->
-      <div class="footer-links-section">
-        <h3 class="footer-heading">Quick Links</h3>
-        <ul class="footer-links">
-          <li class="footer-link"><a href="story.html">About Us</a></li>
-          <li class="footer-link"><a href="projects.html">Our Projects</a></li>
-          <li class="footer-link"><a href="employment.html">Get Involved</a></li>
-          <li class="footer-link"><a href="customer-support.html">Donate Now</a></li>
-          <li class="footer-link"><a href="testimonial.html">News & Events</a></li>
-          <li class="footer-link"><a href="customer-support.html">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <!-- Programs Section -->
-      <div class="footer-links-section">
-        <h3 class="footer-heading">Our Programs</h3>
-        <ul class="footer-links">
-          <li class="footer-link"><a href="#">Education Fund</a></li>
-          <li class="footer-link"><a href="#">Clean Water Initiative</a></li>
-          <li class="footer-link"><a href="#">Healthcare Access</a></li>
-          <li class="footer-link"><a href="#">Youth Empowerment</a></li>
-          <li class="footer-link"><a href="#">Disaster Relief</a></li>
-          <li class="footer-link"><a href="#">Community Building</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact & Newsletter Section -->
-      <div class="footer-contact-section">
-        <h3 class="footer-heading">Get In Touch</h3>
-        <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div>1234 Hope Street, Charity Lane<br>New York, NY 10001</div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-            <div>+1 (555) 123-4567</div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <a href="mailto:contact.hopespark@gamil.com"><div>info@hopesparkfoundation.org</div></a>
-          </div>
-        </div>
-
-        <h3 class="footer-heading">Newsletter</h3>
-        <div class="newsletter-form">
-            <form id="contact-form">
-          <div class="form-group">
-            <input name="newsletter-form" type="email" class="newsletter-input" placeholder="Your email address">
-            <button type="submit" class="submit-btn">Subscribe</button>
-          </div>
-          <p class="newsletter-disclaimer">Subscribe to get updates on our projects and impact stories.</p>
-          <div id="form-message" class="text-center text-white mt-4"></div> <!-- Success/Error Message Container -->
-
-        </form>
-        </div>
-
-        <div class="trust-badges">
-          <div class="trust-badge">
-            <i class="fas fa-shield-alt"></i>
-            <span>501(c)(3) Certified</span>
-          </div>
-          <div class="trust-badge">
-            <i class="fas fa-check-circle"></i>
-            <span>Transparency Pledge</span>
-          </div>
-          <div class="trust-badge">
-            <i class="fas fa-award"></i>
-            <span>Top-Rated Charity</span>
-          </div>
-        </div>
-      </div>
+    <!-- Quick Links Section -->
+    <div class="footer-links-section">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li class="footer-link"><a href="story.html">About Us</a></li>
+        <li class="footer-link"><a href="projects.html">Our Projects</a></li>
+        <li class="footer-link"><a href="employment.html">Get Paid!</a></li>
+        <li class="footer-link"><a href="https://thesparkofhope.org" target="_blank" rel="noopener">Our Parent Company</a></li>
+        <li class="footer-link"><a href="https://thesparkofhope.org/news/" target="_blank" rel="noopener">News & Events</a></li>
+        <li class="footer-link"><a href="customer-support.html">Contact Us</a></li>
+      </ul>
     </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <div class="footer-bottom-content">
-        <div class="copyright">
-          &copy; 2025 HopeSpark Foundation. All rights reserved. Made with <i class="fas fa-heart heart-icon"></i> for a better world.
+    <!-- Programs Section -->
+    <div class="footer-links-section">
+      <h3 class="footer-heading">Our Programs</h3>
+      <ul class="footer-links">
+        <li class="footer-link"><a href="grant.html">Grants for single women</a></li>
+        <li class="footer-link"><a href="grant.html">Scholarships</a></li>
+        <li class="footer-link"><a href="grant.html">Business Startup</a></li>
+        <li class="footer-link"><a href="employment.html">Women Empowerment</a></li>
+        <li class="footer-link"><a href="grant.html">Career Expansion</a></li>
+        <li class="footer-link"><a href="grant.html">Dept Payment</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact & Newsletter Section -->
+    <div class="footer-contact-section">
+      <h3 class="footer-heading">Get In Touch</h3>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>241  Minetta Lane, Apt 4B<br>New York, NY 10012</div>
         </div>
-        <div class="footer-bottom-links">
-          <a href=" https://www.termsfeed.com/live/5ef78e38-8cea-4cee-86d0-0ccd13afc3fa"  target="_blank" rel="noopener" class="footer-bottom-link">Privacy Policy</a>
-          <a href=" https://www.termsfeed.com/live/5ef78e38-8cea-4cee-86d0-0ccd13afc3fa"  target="_blank" rel="noopener" class="footer-bottom-link">Terms of Service</a>
-          <a href=" https://www.termsfeed.com/live/5ef78e38-8cea-4cee-86d0-0ccd13afc3fa"  target="_blank" rel="noopener" class="footer-bottom-link">Cookie Policy</a>
-          <a href=" https://www.termsfeed.com/live/5ef78e38-8cea-4cee-86d0-0ccd13afc3fa"  target="_blank" rel="noopener" class="footer-bottom-link">Sitemap</a>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <div><a target="_blank" href="tel:+1 (555) 123-4567">+1 (808) 301-9134</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <a href="mailto:hopesparkfoundation@outlook.com" target="_blank"><div>hopesparkfoundation@outlook.com</div></a>
         </div>
       </div>
-    </div>
-  </footer>
 
+      <h3 class="footer-heading">Newsletter</h3>
+      <div class="newsletter-form">
+          <form id="contact-form">
+        <div class="form-group">
+          <input name="newsletter-form" type="email" class="newsletter-input" placeholder="Your email address">
+          <button type="submit" class="submit-btn">Subscribe</button>
+        </div>
+        <p class="newsletter-disclaimer">Subscribe to get updates on our projects and impact stories.</p>
+        <div id="form-message" class="text-center text-white mt-4"></div> <!-- Success/Error Message Container -->
+
+      </form>
+      </div>
+
+     
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="footer-bottom-content">
+      <div class="copyright">
+        &copy; 2025 HopeSpark Foundation. A subsidiary of  <a href="https://thesparkofhope.org">The Spark of Hope Foundation</a>
+      </div>
+      <div class="footer-bottom-links">
+        <a href=" https://thesparkofhope.org/terms-and-privacy/"  target="_blank" rel="noopener" class="footer-bottom-link">Privacy Policy</a>
+        <a href=" https://thesparkofhope.org/terms-and-privacy/"  target="_blank" rel="noopener" class="footer-bottom-link">Terms of Service</a>
+        <a href=" https://thesparkofhope.org/terms-and-privacy/"  target="_blank" rel="noopener" class="footer-bottom-link">Cookie Policy</a>
+        <a href=" https://thesparkofhope.org/terms-and-privacy/"  target="_blank" rel="noopener" class="footer-bottom-link">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
   <!-- Back to Top Button -->
   <div class="back-to-top">
-    <i class="fas fa-arrow-up"></i>
+    <i  style="color:white;" class="fas fa-arrow-up"></i>
   </div>
   <div class="chat-container">
     <button class="chat-button" aria-label="Open chat">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
         </svg>
     </button>
