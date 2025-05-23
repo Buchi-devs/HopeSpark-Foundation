@@ -20,11 +20,11 @@
           theme: {
               extend: {
                   colors: {
-                      primary: '#2a7f62',
+                      primary: #000000',
                       'primary-light': '#67a98f',
-                      secondary: '#d9a23d',
+                      secondary: '#274c3c',
                       'secondary-light': '#e8c676',
-                      accent: '#f3f3f3',
+                      accent: '#ffffff',
                       'text-light': '#Ffffff',
                       'text-dark': '#333333',
                   }
@@ -44,12 +44,29 @@
       --secondary-light: #e8c676;
       --text-light: #Ffffff;
       --text-dark: #333333;
-        }
         .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease;
         }
+        .project-card {
+          transition: all 0.3s ease;
+      }
+      .project-card:hover {
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+      .project-image {
+          transition: transform 0.5s ease;
+      }
+      .progress-bar {
+          transition: width 1s ease-in-out;
+      }
+      #project-modal {
+          transition: opacity 0.3s ease;
+      }
+      #modal-content {
+          transition: transform 0.3s ease;
+      }
         
         .reveal.active {
             opacity: 1;
@@ -666,11 +683,11 @@
           <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight reveal">Our Impact Projects</h1>
           <p class="text-xl mb-8 leading-relaxed reveal">Transforming communities through sustainable initiatives that create lasting change in the lives of those who need it most.</p>
           <div class="flex flex-wrap justify-center gap-4 reveal">
-              <a href="#projects" class="px-8 py-3 bg-secondary hover:bg-secondary-light text-text-dark font-semibold rounded-md transition duration-300 flex items-center">
+              <a href="#projects" class="px-8 py-3 bg-secondary border-2 border-black shadow-lg hover:bg-white text-text-dark font-semibold rounded-md transition duration-300 flex items-center">
                   <span>Explore Projects</span>
                   <i class="fas fa-arrow-down ml-2"></i>
               </a>
-              <a href="#donate" class="px-8 py-3 bg-accent hover:bg-white text-primary font-semibold rounded-md transition duration-300">Donate Now</a>
+              <a href="#donate" class="px-8 py-3 bg-accent border-2 border-black shadow-lg hover:bg-white text-primary font-semibold rounded-md transition duration-300">Donate Now</a>
           </div>
       </div>
   </div>
@@ -693,7 +710,7 @@
               <div class="text-secondary text-4xl mb-4">
                   <i class="fas fa-hands-helping"></i>
               </div>
-              <h3 class="text-4xl font-bold mb-2">142</h3>
+              <h3 class="text-4xl font-bold mb-2">42</h3>
               <p class="text-lg font-medium text-primary">Active Projects</p>
           </div>
           <div class="bg-accent rounded-lg p-8 text-center shadow-lg transform hover:-translate-y-2 transition-all duration-300 reveal">
@@ -701,125 +718,596 @@
                   <i class="fas fa-globe-americas"></i>
               </div>
               <h3 class="text-4xl font-bold mb-2">29+</h3>
-              <p class="text-lg font-medium text-primary">Countries</p>
+              <p class="text-lg font-medium text-primary">States</p>
           </div>
           <div class="bg-accent rounded-lg p-8 text-center shadow-lg transform hover:-translate-y-2 transition-all duration-300 reveal">
               <div class="text-secondary text-4xl mb-4">
                   <i class="fas fa-users"></i>
               </div>
-              <h3 class="text-4xl font-bold mb-2">125K+</h3>
+              <h3 class="text-4xl font-bold mb-2">2K+</h3>
               <p class="text-lg font-medium text-primary">Lives Impacted</p>
           </div>
           <div class="bg-accent rounded-lg p-8 text-center shadow-lg transform hover:-translate-y-2 transition-all duration-300 reveal">
               <div class="text-secondary text-4xl mb-4">
                   <i class="fas fa-hands"></i>
               </div>
-              <h3 class="text-4xl font-bold mb-2">$19M+</h3>
+              <h3 class="text-4xl font-bold mb-2">$2.5M+</h3>
               <p class="text-lg font-medium text-primary">Funds Deployed</p>
           </div>
       </div>
   </div>
 </section>
 
+<!-- Women's Empowerment Projects Showcase -->
+<section id="projects" class="py-20 bg-gradient-to-b from-white to-gray-50">
+  <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+          <span class="text-secondary font-semibold tracking-wider">EMPOWERMENT INITIATIVES</span>
+          <h2 class="text-4xl font-bold text-primary mt-2 mb-4">Transforming Women's Futures</h2>
+          <p class="max-w-2xl mx-auto text-lg text-gray-600">Investing in programs that create economic independence, education access, and leadership opportunities for women worldwide.</p>
+      </div>
+    
+      <!-- Interactive Project Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 project-gallery">
+          <!-- Project 1 - Business Incubator -->
+          <div class="project-card bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer" data-project="business-incubator">
+              <div class="relative overflow-hidden h-64">
+                  <img src="https://i.pinimg.com/736x/ba/24/42/ba24425d753de6b8b0a73d908ac7fe39.jpg"
+                       alt="Women's Business Incubator"
+                       class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-6">
+                      <span class="bg-blue-700 text-white px-4 py-1 rounded-full text-sm font-medium">Economic Empowerment</span>
+                  </div>
+              </div>
+              <div class="p-6">
+                  <h3 class="text-xl font-bold mb-3 text-primary">She Ventures Business Incubator</h3>
+                  <p class="mb-5 text-gray-600">Providing seed funding, mentorship and training to help women launch sustainable businesses in underserved communities.</p>
+                
+                  <div class="mb-5">
+                      <div class="flex justify-between mb-2 text-sm font-medium">
+                          <span class="text-primary">$250,000 raised</span>
+                          <span class="text-secondary">62% of goal</span>
+                      </div>
+                      <div class="w-full bg-gray-200 rounded-full h-2.5">
+                          <div class="bg-yellow-500 h-2.5 rounded-full progress-bar" style="width: 62%"></div>
+                      </div>
+                  </div>
+                
+                  <div class="flex justify-between items-center">
+                      <div class="flex space-x-2">
+                          <span class="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary">120 Startups</span>
+                          <span class="px-2 py-1 text-xs rounded-full bg-secondary/10 text-secondary">12 States</span>
+                      </div>
+                      <span class="text-sm font-medium text-primary">View Details →</span>
+                  </div>
+              </div>
+          </div>
+        
+          <!-- Project 2 - Tech Education -->
+          <div class="project-card bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer" data-project="tech-education">
+              <div class="relative overflow-hidden h-64">
+                  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                       alt="Women in Tech Program"
+                       class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-6">
+                      <span class="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium">Education</span>
+                  </div>
+              </div>
+              <div class="p-6">
+                  <h3 class="text-xl font-bold mb-3 text-primary">Digital Literacy Initiative</h3>
+                  <p class="mb-5 text-gray-600">Providing laptops, tablets and coding training to help women gain competitive tech skills for the digital economy.</p>
+                
+                  <div class="mb-5">
+                      <div class="flex justify-between mb-2 text-sm font-medium">
+                          <span class="text-primary">5,000 devices</span>
+                          <span class="text-secondary">23% of goal</span>
+                      </div>
+                      <div class="w-full bg-gray-200 rounded-full h-2.5">
+                          <div class="bg-yellow-500 h-2.5 rounded-full progress-bar" style="width: 23%"></div>
+                      </div>
+                  </div>
+                
+                  <div class="flex justify-between items-center">
+                      <div class="flex space-x-2">
+                          <span class="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary">2,000 Graduates</span>
+                          <span class="px-2 py-1 text-xs rounded-full bg-secondary/10 text-secondary">85% Hire Rate</span>
+                      </div>
+                      <span class="text-sm font-medium text-primary">View Details →</span>
+                  </div>
+              </div>
+          </div>
+        
+          <!-- Project 3 - Scholarship Program -->
+          <div class="project-card bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer" data-project="scholarship-program">
+              <div class="relative overflow-hidden h-64">
+                  <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                       alt="Women's Scholarship Program"
+                       class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-end p-6">
+                      <span class="bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-medium">Education</span>
+                  </div>
+              </div>
+              <div class="p-6">
+                  <h3 class="text-xl font-bold mb-3 text-primary">Global Women's Scholarship Fund</h3>
+                  <p class="mb-5 text-gray-600">Providing full tuition scholarships, mentorship and career support to exceptional women from developing nations.</p>
+                
+                  <div class="mb-5">
+                      <div class="flex justify-between mb-2 text-sm font-medium">
+                          <span class="text-primary">$900k raised</span>
+                          <span class="text-secondary">75% of goal</span>
+                      </div>
+                      <div class="w-full bg-gray-200 rounded-full h-2.5">
+                          <div class="bg-yellow-500 h-2.5 rounded-full progress-bar" style="width: 75%"></div>
+                      </div>
+                  </div>
+                
+                  <div class="flex justify-between items-center">
+                      <div class="flex space-x-2">
+                          <span class="px-2 py-1 text-xs rounded-full bg-primary/10 text-primary">85 Scholars</span>
+                          <span class="px-2 py-1 text-xs rounded-full bg-secondary/10 text-secondary">22 States</span>
+                      </div>
+                      <span class="text-sm font-medium text-primary">View Details →</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+      <div class="text-center mt-12">
+          <a href="https://thesparkofhope.org/news/" class="inline-flex items-center px-8 py-3 bg-white border-2 border-primary text-primary hover:bg-gray-700 hover:text-white font-medium rounded-full transition duration-300 shadow-md hover:shadow-lg">
+              <span>Explore All Initiatives</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+          </a>
+      </div>
+  </div>
+</section>
+
+<!-- Project Modal -->
+<div id="project-modal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto transform transition-transform duration-500 scale-90" id="modal-content">
+        <!-- Dynamic content will be inserted here -->
+    </div>
+</div>
+
+<!-- Hidden Project Templates -->
+<div id="project-templates" class="hidden">
+    <!-- Business Incubator Project -->
+    <div id="business-incubator-content" class="p-8">
+        <div class="flex justify-between items-start mb-8">
+            <div>
+                <h2 class="text-3xl font-bold text-primary mb-2">She Ventures Business Incubator</h2>
+                <p class="text-secondary font-medium">Economic Empowerment Initiative | Since 2019</p>
+            </div>
+            <button class="close-modal text-gray-400 hover:text-gray-600 text-2xl">
+                &times;
+            </button>
+        </div>
+       
+        <div class="flex flex-col lg:flex-row gap-8 mb-8">
+            <div class="lg:w-1/2">
+                <div class="rounded-xl overflow-hidden mb-6">
+                    <img src="https://i.pinimg.com/736x/ba/24/42/ba24425d753de6b8b0a73d908ac7fe39.jpg"
+                         alt="Business Incubator"
+                         class="w-full h-auto object-cover">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-primary mb-1">120+</div>
+                        <div class="text-sm text-gray-600">Women-Led Startups</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-primary mb-1">12</div>
+                        <div class="text-sm text-gray-600">States Reached</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-primary mb-1">85%</div>
+                        <div class="text-sm text-gray-600">Success Rate</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-primary mb-1">$900k</div>
+                        <div class="text-sm text-gray-600">Total Revenue</div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="lg:w-1/2">
+                <div class="prose max-w-none">
+                    <h3 class="text-xl font-bold text-primary mb-4">Program Overview</h3>
+                    <p class="mb-4">Our 12-month incubator program provides women entrepreneurs with the tools, training and funding to launch sustainable businesses in underserved communities. Participants receive:</p>
+                   
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="ml-3">$5,000-$25,000 seed funding</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="ml-3">Business development training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="ml-3">One-on-one mentorship</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="ml-3">Access to investor networks</span>
+                        </li>
+                    </ul>
+                   
+                    <h3 class="text-xl font-bold text-primary mb-4">Success Story</h3>
+                    <div class="bg-primary/5 border-l-4 border-primary p-4 mb-6 rounded-r-lg">
+                        <blockquote class="text-primary italic">
+                            "The incubator program transformed my small home bakery into a thriving catering business. With the $15,000 seed funding and mentorship, I now employ 8 other women and supply three local schools with daily meals."
+                        </blockquote>
+                        <div class="mt-3 font-medium">- Joan Runner, Founder of Nourish Catering</div>
+                    </div>
+                   
+                    <div class="flex flex-wrap gap-4">
+                        
+                        <a href="mailto:hopesparkfoundation@outlook.com" class="px-6 py-3 bg-white border-2 border-primary text-primary font-medium rounded-full transition-colors hover:bg-gray-50">
+                          Support This Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tech Education Project -->
+    <div id="tech-education-content" class="p-8">
+        <div class="flex justify-between items-start mb-8">
+            <div>
+                <h2 class="text-3xl font-bold text-primary mb-2">Digital Literacy Initiative</h2>
+                <p class="text-secondary font-medium">Education & Technology Program | Since 2020</p>
+            </div>
+            <button class="close-modal text-gray-400 hover:text-gray-600 text-2xl">
+                &times;
+            </button>
+        </div>
+       
+        <div class="flex flex-col lg:flex-row gap-8 mb-8">
+            <div class="lg:w-1/2">
+                <div class="rounded-xl overflow-hidden mb-6">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                         alt="Tech Education Program"
+                         class="w-full h-auto object-cover">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-primary mb-1">900+</div>
+                        <div class="text-sm text-gray-600">Women Trained</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-primary mb-1">85%</div>
+                        <div class="text-sm text-gray-600">Job Placement</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-primary mb-1">500+</div>
+                        <div class="text-sm text-gray-600">Devices Distributed</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-primary mb-1">15</div>
+                        <div class="text-sm text-gray-600">Partner Companies</div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="lg:w-1/2">
+                <div class="prose max-w-none">
+                    <h3 class="text-xl font-bold text-primary mb-4">Program Overview</h3>
+                    <p class="mb-4">Our 6-month intensive program equips women with essential digital skills and provides the technology needed to participate in the modern workforce. The program includes:</p>
+                   
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="ml-3">Free laptop or tablet for all participants</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="ml-3">Coding bootcamp (HTML, CSS, JavaScript)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="ml-3">Digital marketing training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="ml-3">Job placement assistance</span>
+                        </li>
+                    </ul>
+                   
+                    <h3 class="text-xl font-bold text-primary mb-4">Success Story</h3>
+                    <div class="bg-primary/5 border-l-4 border-primary p-4 mb-6 rounded-r-lg">
+                        <blockquote class="text-primary italic">
+                            "Before this program, I had never touched a computer. Now I work as a junior web developer earning three times what I made as a cleaner. The skills I learned changed my life and my family's future."
+                        </blockquote>
+                        <div class="mt-3 font-medium">- Maria Gutierrez, Junior Developer at TechSolutions</div>
+                    </div>
+                   
+                    <div class="flex flex-wrap gap-4">
+                       
+                        <a href="#" class="px-6 py-3 bg-white border-2 border-primary text-primary font-medium rounded-full transition-colors hover:bg-gray-50">
+                          Donate a Device
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scholarship Program Project -->
+    <div id="scholarship-program-content" class="p-8">
+        <div class="flex justify-between items-start mb-8">
+            <div>
+                <h2 class="text-3xl font-bold text-primary mb-2">Global Women's Scholarship Fund</h2>
+                <p class="text-secondary font-medium">Education Initiative | Since 2015</p>
+            </div>
+            <button class="close-modal text-gray-400 hover:text-gray-600 text-2xl">
+                &times;
+            </button>
+        </div>
+       
+        <div class="flex flex-col lg:flex-row gap-8 mb-8">
+            <div class="lg:w-1/2">
+                <div class="rounded-xl overflow-hidden mb-6">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                         alt="Scholarship Students"
+                         class="w-full h-auto object-cover">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-primary mb-1">85</div>
+                        <div class="text-sm text-gray-600">Current Scholars</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-primary mb-1">22</div>
+                        <div class="text-sm text-gray-600">States Represented</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-primary mb-1">92%</div>
+                        <div class="text-sm text-gray-600">Graduation Rate</div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-primary mb-1">210</div>
+                        <div class="text-sm text-gray-600">Alumni Network</div>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="lg:w-1/2">
+                <div class="prose max-w-none">
+                    <h3 class="text-xl font-bold text-primary mb-4">Program Overview</h3>
+                    <p class="mb-4">Our comprehensive scholarship program identifies and supports exceptional young women from developing nations to pursue undergraduate and graduate degrees at top universities worldwide. Benefits include:</p>
+                   
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="ml-3">Full tuition coverage and living stipend</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="ml-3">Leadership development training</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="ml-3">Career mentorship program</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-white" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <span class="ml-3">Global alumni network</span>
+                        </li>
+                    </ul>
+                   
+                    <h3 class="text-xl font-bold text-primary mb-4">Success Story</h3>
+                    <div class="bg-primary/5 border-l-4 border-primary p-4 mb-6 rounded-r-lg">
+                        <blockquote class="text-primary italic">
+                            "Coming from a rural village where girls rarely finish high school, this scholarship allowed me to study engineering at Stanford. I'm now working on renewable energy solutions to bring electricity to communities like mine."
+                        </blockquote>
+                        <div class="mt-3 font-medium">- Naledi Moshoeshoe, Renewable Energy Engineer</div>
+                    </div>
+                   
+                    <div class="flex flex-wrap gap-4">
+                        <a href="mailto:hopesparkfoundation@outloook.com" class="px-6 py-3 bg-gray-600 hover:bg-primary-dark text-white font-medium rounded-full transition-colors shadow-md">
+                            Sponsor a Student
+                        </a>
+                        <a href="https://thesparkofhope.org/scholars/" class="px-6 py-3 bg-white border-2 border-primary text-primary font-medium rounded-full transition-colors hover:bg-gray-50">
+                            Meet Our Scholars
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 
 <!-- Donate Section -->
-<section id="donate" class="py-20 hero-pattern">
+I'll create a donation form that properly collects the donation amount (either selected or custom) and formats it into a well-structured email template using the `mailto:` protocol. Here's the improved version with all your requirements:
+
+```html
+<section id="donate" class="py-20 bg-gray-100">
   <div class="container mx-auto px-4">
-      <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+      <div class="max-w-5xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden border-2 border-gray-800">
           <div class="grid grid-cols-1 md:grid-cols-2">
-              <div class="p-8 md:p-12 reveal">
-                  <span class="text-secondary font-semibold">MAKE A DIFFERENCE</span>
-                  <h2 class="text-3xl font-bold text-primary mt-2 mb-6">Support Our Projects</h2>
-                  <p class="mb-8">Your contribution, no matter the size, helps us create lasting change in communities that need it most. Choose a specific project or donate to our general fund.</p>
-                  <form id ="donationForm">
-                  <div class="space-y-4 mb-8">
-                      <div class="flex justify-between items-center">
-                          <label class="flex items-center cursor-pointer">
-                              <input type="radio" name="donation-amount" value="25" class="sr-only peer" checked>
-                              <div class="w-6 h-6 border-2 border-gray-300 rounded-full mr-3 flex items-center justify-center peer-checked:border-secondary">
-                                  <div class="w-3 h-3 bg-secondary rounded-full opacity-0 peer-checked:opacity-100"></div>
-                              </div>
-                              <span>$25</span>
-                          </label>
-                          <span class="text-sm text-gray-500">Provides clean water for one person</span>
-                      </div>
-                      
-                      <div class="flex justify-between items-center">
-                          <label class="flex items-center cursor-pointer">
-                              <input type="radio" name="donation-amount" value="50" class="sr-only peer">
-                              <div class="w-6 h-6 border-2 border-gray-300 rounded-full mr-3 flex items-center justify-center peer-checked:border-secondary">
-                                  <div class="w-3 h-3 bg-secondary rounded-full opacity-0 peer-checked:opacity-100"></div>
-                              </div>
-                              <span>$50</span>
-                          </label>
-                          <span class="text-sm text-gray-500">Supplies school materials for a child</span>
-                      </div>
-                      
-                      <div class="flex justify-between items-center">
-                          <label class="flex items-center cursor-pointer">
-                              <input type="radio" name="donation-amount" value="100" class="sr-only peer">
-                              <div class="w-6 h-6 border-2 border-gray-300 rounded-full mr-3 flex items-center justify-center peer-checked:border-secondary">
-                                  <div class="w-3 h-3 bg-secondary rounded-full opacity-0 peer-checked:opacity-100"></div>
-                              </div>
-                              <span>$100</span>
-                          </label>
-                          <span class="text-sm text-gray-500">Funds medical care for a family</span>
-                      </div>
-                      
-                      <div class="flex justify-between items-center">
-                          <label class="flex items-center cursor-pointer">
-                              <input type="radio" name="donation-amount" value="custom" class="sr-only peer">
-                              <div class="w-6 h-6 border-2 border-gray-300 rounded-full mr-3 flex items-center justify-center peer-checked:border-secondary">
-                                  <div class="w-3 h-3 bg-secondary rounded-full opacity-0 peer-checked:opacity-100"></div>
-                              </div>
-                              <span>Custom Amount</span>
-                          </label>
-                          <input type="number" placeholder="$" class="w-20 px-2 py-1 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-secondary">
-                      </div>
-                  </div>
-                  
-                  <a href="customer-support.html"
-                     class="w-full py-4 bg-secondary hover:bg-secondary-light text-text-dark font-bold rounded-md transition duration-300 flex items-center justify-center">
-                      <i class="fas fa-heart mr-2"></i>
-                      <span>Donate Now</span>
+              <div class="p-8 md:p-12">
+                  <span class="text-green-800 font-semibold">EMPOWER WOMEN & SINGLE MOMS</span>
+                  <h2 class="text-3xl font-bold text-gray-900 mt-2 mb-6">Make Your Impact Today</h2>
+                  <p class="mb-8 text-gray-700">Your support helps us provide scholarships, grants, debt clearance, and tech education to women and single mothers in need.</p>
                  
-                </a>
+                  <form id="donationForm" onsubmit="return prepareDonationEmail()">
+                      <div class="space-y-4 mb-8">
+                          <div class="flex justify-between items-center p-3 border border-gray-300 rounded-lg hover:border-green-700">
+                              <label class="flex items-center cursor-pointer">
+                                  <input type="radio" name="donation-amount" value="25" class="sr-only peer" checked>
+                                  <div class="w-6 h-6 border-2 border-gray-500 rounded-full mr-3 flex items-center justify-center peer-checked:border-green-700">
+                                      <div class="w-3 h-3 bg-green-700 rounded-full opacity-0 peer-checked:opacity-100"></div>
+                                  </div>
+                                  <span class="font-medium">$25</span>
+                              </label>
+                              <span class="text-sm text-gray-600">Supports educational materials</span>
+                          </div>
+                         
+                          <div class="flex justify-between items-center p-3 border border-gray-300 rounded-lg hover:border-green-700">
+                              <label class="flex items-center cursor-pointer">
+                                  <input type="radio" name="donation-amount" value="50" class="sr-only peer">
+                                  <div class="w-6 h-6 border-2 border-gray-500 rounded-full mr-3 flex items-center justify-center peer-checked:border-green-700">
+                                      <div class="w-3 h-3 bg-green-700 rounded-full opacity-0 peer-checked:opacity-100"></div>
+                                  </div>
+                                  <span class="font-medium">$50</span>
+                              </label>
+                              <span class="text-sm text-gray-600">Funds tech training for one woman</span>
+                          </div>
+                         
+                          <div class="flex justify-between items-center p-3 border border-gray-300 rounded-lg hover:border-green-700">
+                              <label class="flex items-center cursor-pointer">
+                                  <input type="radio" name="donation-amount" value="100" class="sr-only peer">
+                                  <div class="w-6 h-6 border-2 border-gray-500 rounded-full mr-3 flex items-center justify-center peer-checked:border-green-700">
+                                      <div class="w-3 h-3 bg-green-700 rounded-full opacity-0 peer-checked:opacity-100"></div>
+                                  </div>
+                                  <span class="font-medium">$100</span>
+                              </label>
+                              <span class="text-sm text-gray-600">Helps clear small debts</span>
+                          </div>
+                         
+                          <div class="flex justify-between items-center p-3 border border-gray-300 rounded-lg hover:border-green-700">
+                              <label class="flex items-center cursor-pointer">
+                                  <input type="radio" name="donation-amount" value="custom" id="custom-amount-radio" class="sr-only peer">
+                                  <div class="w-6 h-6 border-2 border-gray-500 rounded-full mr-3 flex items-center justify-center peer-checked:border-green-700">
+                                      <div class="w-3 h-3 bg-green-700 rounded-full opacity-0 peer-checked:opacity-100"></div>
+                                  </div>
+                                  <span class="font-medium">Custom Amount</span>
+                              </label>
+                              <input type="number" id="custom-amount" placeholder="$" class="w-24 px-3 py-1 border border-gray-500 rounded focus:outline-none focus:ring-2 focus:ring-green-700" disabled>
+                          </div>
+                      </div>
+                     
+                      <div class="mb-6">
+                          <label for="project" class="block text-gray-700 font-medium mb-2">Select Project</label>
+                          <select id="project" name="project" class="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-700">
+                              <option value="scholarships">Women's Education Scholarships</option>
+                              <option value="grants">Single Mothers Grants</option>
+                              <option value="debt">Debt Clearance Program</option>
+                              <option value="tech">Tech Empowerment Fund</option>
+                              <option value="general">General Fund (Where Most Needed)</option>
+                          </select>
+                      </div>
+                     
+                      <button type="submit" class="w-full py-4 bg-green-800 hover:bg-green-900 text-white font-bold rounded-md transition duration-300 flex items-center justify-center border-2 border-gray-900 shadow-lg">
+                          <i class="fas fa-heart mr-2"></i>
+                          <span>Continue to Donation Summary</span>
+                      </button>
+                  </form>
               </div>
-            </form>
-              <div class="bg-primary p-8 md:p-12 text-text-light flex flex-col justify-center reveal">
-                  <h3 class="text-2xl font-bold mb-6">Your Impact</h3>
-                  
+             
+              <div class="bg-gray-900 p-8 md:p-12 text-white flex flex-col justify-center">
+                  <h3 class="text-2xl font-bold mb-6 text-green-500">Your Donation Creates Change</h3>
+                 
                   <div class="space-y-6 mb-8">
-                      <div>
+                      <div class="p-3 border-l-4 border-green-700">
                           <div class="flex items-center mb-2">
-                              <i class="fas fa-tint mr-3 text-secondary"></i>
-                              <span class="font-medium">Clean Water Access</span>
+                              <i class="fas fa-graduation-cap mr-3 text-green-500"></i>
+                              <span class="font-medium">Education Scholarships</span>
                           </div>
-                          <p class="text-sm opacity-80">Your donation helps provide sustainable clean water solutions to communities in need.</p>
+                          <p class="text-sm opacity-80">Help women access quality education and vocational training programs.</p>
                       </div>
-                      
-                      <div>
+                     
+                      <div class="p-3 border-l-4 border-green-700">
                           <div class="flex items-center mb-2">
-                              <i class="fas fa-book mr-3 text-secondary"></i>
-                              <span class="font-medium">Education Opportunities</span>
+                              <i class="fas fa-hand-holding-usd mr-3 text-green-500"></i>
+                              <span class="font-medium">Financial Grants</span>
                           </div>
-                          <p class="text-sm opacity-80">Support schools, teachers, and resources that give children pathways to brighter futures.</p>
+                          <p class="text-sm opacity-80">Provide single mothers with startup capital for small businesses.</p>
                       </div>
-                      
-                      <div>
+                     
+                      <div class="p-3 border-l-4 border-green-700">
                           <div class="flex items-center mb-2">
-                              <i class="fas fa-heartbeat mr-3 text-secondary"></i>
-                              <span class="font-medium">Healthcare Services</span>
+                              <i class="fas fa-laptop-code mr-3 text-green-500"></i>
+                              <span class="font-medium">Tech Empowerment</span>
                           </div>
-                          <p class="text-sm opacity-80">Help provide essential medical care to underserved communities around the world.</p>
+                          <p class="text-sm opacity-80">Fund technology training and equipment for women entering STEM fields.</p>
                       </div>
                   </div>
-                  
-                  <div class="bg-white bg-opacity-10 p-4 rounded-lg">
+                 
+                  <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-700">
                       <p class="text-sm italic">
-                          "We make a living by what we get, but we make a life by what we give."
-                          <span class="block mt-2 font-medium">— Winston Churchill</span>
+                          "When you empower a woman, you empower a family, a community, and ultimately the world."
+                          <span class="block mt-2 font-medium">— Unknown</span>
                       </p>
                   </div>
               </div>
@@ -836,15 +1324,15 @@
           <p class="text-lg mb-8">Join our community of changemakers who are committed to creating a better world for those in need.</p>
           
           <div class="flex flex-wrap justify-center gap-4">
-              <a href="#projects" class="px-8 py-3 bg-primary hover:bg-primary-light text-text-light font-semibold rounded-md transition duration-300">
+              <a href="#projects" class="px-8 py-3 bg-primary border-2 border-black shadow-lg hover:bg-primary-light text-text-light font-semibold rounded-md transition duration-300">
                   <i class="fas fa-project-diagram mr-2"></i>
                   <span>Explore Projects</span>
               </a>
-              <a href="employment.html" class="px-8 py-3 bg-secondary hover:bg-secondary-light text-text-dark font-semibold rounded-md transition duration-300">
+              <a href="employment.html" class="px-8 py-3 bg-secondary border-2 border-black shadow-lg hover:bg-secondary-light text-text-dark font-semibold rounded-md transition duration-300">
                   <i class="fas fa-hands-helping mr-2"></i>
                   <span>Get Paid!</span>
               </a>
-              <a href="index.html#contact-form" class="px-8 py-3 bg-white border-2 border-primary hover:bg-gray-50 text-primary font-semibold rounded-md transition duration-300">
+              <a href="index.html#contact-form" class="px-8 py-3 border-2 border-black shadow-lg bg-white border-2 border-primary hover:bg-gray-50 text-primary font-semibold rounded-md transition duration-300">
                   <i class="fas fa-envelope mr-2"></i>
                   <span>Newsletter</span>
               </a>
@@ -870,7 +1358,7 @@
       <div class="footer-logo">HopeSpark Foundation</div>
       <p class="footer-tagline">Illuminating paths to a brighter future, empowering women  through education, empowerment,  innovation, and sustainable change.</p>
       <div class="social-icons">
-        <a target="_blank" href="https://www.facebook.com/sparkofhopefdn" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a  target="_blank" href="https://www.facebook.com/sparkofhopefdn" class="social-icon"><i class="fab fa-facebook-f"></i></a>
         <a target="_blank" href="https://www.instagram.com/sparkofhopefdn" class="social-icon"><i class="fab fa-instagram"></i></a>
         <a target="_blank" href="https://www.youtube.com/channel/UCYbVXBR-7HomQKvCP8KkTKw" class="social-icon"><i class="fab fa-youtube"></i></a>
       </div>
@@ -966,7 +1454,7 @@
     
     <div class="chat-container">
         <button id="chat-button"class="chat-button" aria-label="Open chat">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
             </svg>
         </button>
@@ -1125,6 +1613,117 @@
 
         // Initialize AOS
         AOS.init();
+
+
+   document.addEventListener('DOMContentLoaded', function() {
+        // Project Modal Functionality
+        const projectModal = document.getElementById('project-modal');
+        const modalContent = document.getElementById('modal-content');
+       
+        // Open modal when clicking project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const projectId = this.getAttribute('data-project');
+                const projectContent = document.getElementById(`${projectId}-content`).cloneNode(true);
+               
+                modalContent.innerHTML = '';
+                modalContent.appendChild(projectContent);
+               
+                // Show modal with animations
+                projectModal.classList.remove('opacity-0', 'pointer-events-none');
+                modalContent.classList.remove('scale-90');
+               
+                // Add close event to new button
+                document.querySelector('.close-modal').addEventListener('click', closeProjectModal);
+            });
+        });
+       
+        // Close modal function
+        function closeProjectModal() {
+            projectModal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.add('scale-90');
+        }
+       
+        // Close when clicking outside content
+        projectModal.addEventListener('click', function(e) {
+            if (e.target === projectModal) {
+                closeProjectModal();
+            }
+        });
+       
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeProjectModal();
+            }
+        });
+    });
+      // Enable custom amount input when custom radio is selected
+      document.getElementById('custom-amount-radio').addEventListener('change', function() {
+        const customAmountInput = document.getElementById('custom-amount');
+        customAmountInput.disabled = !this.checked;
+        if (this.checked) {
+            customAmountInput.focus();
+        }
+    });
+   
+    // Disable custom amount input when other radios are selected
+    document.querySelectorAll('input[name="donation-amount"]:not(#custom-amount-radio)').forEach(radio => {
+        radio.addEventListener('change', function() {
+            document.getElementById('custom-amount').disabled = true;
+        });
+    });
+   
+    function prepareDonationEmail() {
+        // Get selected donation amount
+        let amount;
+        const customAmountRadio = document.getElementById('custom-amount-radio');
+        const customAmountInput = document.getElementById('custom-amount');
+       
+        if (customAmountRadio.checked && customAmountInput.value) {
+            amount = customAmountInput.value;
+        } else {
+            amount = document.querySelector('input[name="donation-amount"]:checked').value;
+        }
+       
+        // Get selected project
+        const projectSelect = document.getElementById('project');
+        const selectedProject = projectSelect.options[projectSelect.selectedIndex].text;
+       
+        // Create email subject and body
+        const subject = `Donation Pledge: $${amount} for ${selectedProject}`;
+       
+        const body = `Dear HopeSpark Foundation,
+
+I would like to make a donation pledge with the following details:
+
+Donation Amount: $${amount}
+Selected Project: ${selectedProject}
+
+Please confirm the next steps to complete my donation.
+
+Thank you for your important work empowering women and single mothers.
+
+Best regards,
+[Your Full Name]
+[Your Email Address]
+[Your Phone Number (optional)]
+
+---
+
+You can edit this email before sending.
+After sending, our team will contact you with payment instructions.`;
+
+        // Encode for mailto link
+        const encodedSubject = encodeURIComponent(subject);
+        const encodedBody = encodeURIComponent(body);
+       
+        // Open user's email client
+        window.location.href = `mailto:hopesparkfoundation@outlook.com?subject=${encodedSubject}&body=${encodedBody}`;
+       
+        // Prevent form submission
+        return false;
+    }     
     </script>
 </body>
 </html>
